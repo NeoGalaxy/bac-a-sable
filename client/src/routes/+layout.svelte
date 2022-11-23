@@ -5,9 +5,7 @@
 	</ul>
 </nav>
 
-<main>
-	<slot />
-</main>
+<slot />
 
 <style>
 	nav {
