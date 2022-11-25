@@ -17,7 +17,7 @@ export const rankings = [
 		methodId: "borda4",
 		methodName: "Borda 4",
 		description:
-			"Participants were asked to rank exactly 4 candidates. Meaning of the scores: 11 = first / 10 = second / 9 = third / 8 = fourth / nothing = not ranked",
+			"Méthode de vote où les participants doivent classer jusqu'à leurs 4 candidats préférés dans leur ordre de préférence. Pour décider du candidat gagnant, on somme pour chaque candidat le nombre de votants les ayant choisi en tant que premier vote. Celui ayant le moins de votes est éliminé, et ses votes sont redistribués aux autres candidats en fonction des votes suivant des votants ayant voté pour le candidat éliminé. Les candidats sont ainsi éliminés un à un jusqu'à ce qu'il y en ait un qui a la majorité.",
 		results: [
 			{ name: "Emmanuel Macron", value: 24.01 },
 			{ name: "Marine Le Pen", value: 21.3 },
@@ -37,7 +37,7 @@ export const rankings = [
 		methodId: "approval",
 		methodName: "Approval",
 		description:
-			"Participants were asked to approve or disapprove each candidate",
+			"Méthode de vote où les participants doivent indiquer s'ils étaient favorable ou non au candidat pour chaque candidat.",
 		results: [
 			{ name: "Emmanuel Macron", value: 25.01 },
 			{ name: "Marine Le Pen", value: 20.3 },
@@ -57,7 +57,7 @@ export const rankings = [
 		methodId: "ev101",
 		methodName: "Evaluation Voting -1/0/1",
 		description:
-			"Participants were asked to give a score to each candidate, on the scale (-1,0,1).",
+			"Méthode de vote où les participants doivent donner un score à chaque candidat: -1, 0 ou 1.",
 		results: [
 			{ name: "Emmanuel Macron", value: 20.01 },
 			{ name: "Marine Le Pen", value: 22.3 },
