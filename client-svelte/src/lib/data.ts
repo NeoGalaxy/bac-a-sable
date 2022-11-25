@@ -1,4 +1,4 @@
-const data = [
+export default [
 	{ name: "Emmanuel Macron", value: 24.01 },
 	{ name: "Marine Le Pen", value: 21.3 },
 	{ name: "François Fillon", value: 19.95 },
@@ -12,4 +12,65 @@ const data = [
 	{ name: "Jean Lassalle", value: 0.17 },
 ]
 
-export default data
+export const rankings = [
+	{
+		methodId: "borda4",
+		methodName: "Borda 4",
+		description:
+			"Participants were asked to rank exactly 4 candidates. Meaning of the scores: 11 = first / 10 = second / 9 = third / 8 = fourth / nothing = not ranked",
+		results: [
+			{ name: "Emmanuel Macron", value: 24.01 },
+			{ name: "Marine Le Pen", value: 21.3 },
+			{ name: "François Fillon", value: 19.95 },
+			{ name: "Jean-Luc Mélenchon", value: 19.6 },
+			{ name: "Benoît Hamon", value: 6.36 },
+			{ name: "Nathalie Arthaud", value: 0.93 },
+			{ name: "Philippe Poutou", value: 0.9 },
+			{ name: "Jacques Cheminade", value: 0.6 },
+			{ name: "François Asselineau", value: 0.55 },
+			{ name: "Nicolas Dupont-Aignan", value: 0.54 },
+			{ name: "Jean Lassalle", value: 0.17 },
+		],
+		unit: "PERCENT",
+	},
+	{
+		methodId: "approval",
+		methodName: "Approval",
+		description:
+			"Participants were asked to approve or disapprove each candidate",
+		results: [
+			{ name: "Emmanuel Macron", value: 25.01 },
+			{ name: "Marine Le Pen", value: 20.3 },
+			{ name: "François Fillon", value: 19.95 },
+			{ name: "Jean-Luc Mélenchon", value: 19.6 },
+			{ name: "Benoît Hamon", value: 6.36 },
+			{ name: "Nathalie Arthaud", value: 0.93 },
+			{ name: "Philippe Poutou", value: 0.9 },
+			{ name: "Jacques Cheminade", value: 0.6 },
+			{ name: "François Asselineau", value: 0.55 },
+			{ name: "Nicolas Dupont-Aignan", value: 0.54 },
+			{ name: "Jean Lassalle", value: 0.17 },
+		],
+		unit: "PERCENT",
+	},
+	{
+		methodId: "ev101",
+		methodName: "Evaluation Voting -1/0/1",
+		description:
+			"Participants were asked to give a score to each candidate, on the scale (-1,0,1).",
+		results: [
+			{ name: "Emmanuel Macron", value: 20.01 },
+			{ name: "Marine Le Pen", value: 22.3 },
+			{ name: "François Fillon", value: 20.95 },
+			{ name: "Jean-Luc Mélenchon", value: 20.6 },
+			{ name: "Benoît Hamon", value: 6.36 },
+			{ name: "Nathalie Arthaud", value: 0.93 },
+			{ name: "Philippe Poutou", value: 0.9 },
+			{ name: "Jacques Cheminade", value: 0.6 },
+			{ name: "François Asselineau", value: 0.55 },
+			{ name: "Nicolas Dupont-Aignan", value: 0.54 },
+			{ name: "Jean Lassalle", value: 0.17 },
+		],
+		unit: "PERCENT",
+	},
+]

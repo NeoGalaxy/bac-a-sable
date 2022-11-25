@@ -1,7 +1,7 @@
 <script lang="ts">
 	import NavBar from "./lib/components/NavBar.svelte"
-	import GraphPage from "./GraphPage.svelte"
-	import ReportPage from "./ReportPage.svelte"
+	import GraphPage from "./pages/GraphPage.svelte"
+	import ReportPage from "./pages/ReportPage.svelte"
 
 	let showReport = false
 </script>

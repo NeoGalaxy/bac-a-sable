@@ -51,5 +51,6 @@
 	dialog {
 		border: none;
 		border-radius: var(--radius);
+		max-width: 50ch;
 	}
 </style>

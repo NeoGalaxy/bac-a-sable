@@ -3,6 +3,7 @@
 	import Filter from "./Filter.svelte"
 	import { filters } from "../stores"
 	import MethodSwitch from "./MethodSwitch/MethodSwitch.svelte"
+	import { rankings } from "../data"
 </script>
 
 <div class="sidebar">
@@ -17,6 +18,18 @@
 	</Filter>
 
 	<MethodSwitch />
+
+	<div class="rankings">
+		{#each rankings as ranking, i}
+			<Filter help={ranking.description}>
+				<Checkbox
+					bind:checked={$filters.methods[i]}
+					label={ranking.methodName}
+					name={ranking.methodId}
+				/>
+			</Filter>
+		{/each}
+	</div>
 </div>
 
 <style>
@@ -29,5 +42,11 @@
 	h1 {
 		font-size: 1.5rem;
 		color: var(--primary);
+	}
+
+	.rankings {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
 	}
 </style>
