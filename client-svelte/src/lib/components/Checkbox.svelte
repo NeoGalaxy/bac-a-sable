@@ -2,10 +2,11 @@
 	export let checked: boolean
 	export let label: string
 	export let name: string
+	export let disabled = false
 </script>
 
 <div>
-	<input type="checkbox" bind:checked {name} id={name} />
+	<input type="checkbox" bind:checked {disabled} {name} id={name} />
 	<label for={name}>{label}</label>
 </div>
 
@@ -28,5 +29,9 @@
 
 	input:checked {
 		background: var(--primary);
+	}
+
+	input:disabled {
+		background: grey;
 	}
 </style>

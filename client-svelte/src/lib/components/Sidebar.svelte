@@ -26,6 +26,8 @@
 					bind:checked={$filters.methods[i]}
 					label={ranking.methodName}
 					name={ranking.methodId}
+					disabled={$filters.methods[i] &&
+						$filters.methods.filter((v) => v).length === 1}
 				/>
 			</Filter>
 		{/each}
@@ -34,9 +36,7 @@
 
 <style>
 	.sidebar {
-		grid-area: "sidebar";
 		padding: 0 1rem;
-		border-right: 3px solid var(--primary);
 	}
 
 	h1 {

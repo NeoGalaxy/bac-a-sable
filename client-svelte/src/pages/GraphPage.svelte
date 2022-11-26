@@ -1,4 +1,5 @@
 <script lang="ts">
+	import MultiGraph from "../lib/components/MultiGraph.svelte"
 	import Sidebar from "../lib/components/Sidebar.svelte"
 	import TempGraph from "../lib/components/TempGraph.svelte"
 	import { filters } from "../lib/stores"
@@ -7,14 +8,11 @@
 <main>
 	<Sidebar />
 	<div class="graph">
-		<p>
-			graphe méthode {$filters.comparison + 1}, biais
-			{$filters.biasCorrection ? "" : "non"} corrigés
-		</p>
-		<p>
-			{$filters.methods}
-		</p>
-		<TempGraph />
+		{#if $filters.comparison === 0}
+			<MultiGraph />
+		{:else}
+			<!-- bigraph -->
+		{/if}
 	</div>
 </main>
 
@@ -22,10 +20,5 @@
 	main {
 		display: grid;
 		grid-template-columns: 20rem 1fr;
-		grid-template-areas: "sidebar content";
-	}
-
-	.graph {
-		grid-area: "content";
 	}
 </style>

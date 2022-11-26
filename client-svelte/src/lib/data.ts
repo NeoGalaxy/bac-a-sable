@@ -37,7 +37,7 @@ export const rankings = [
 		methodId: "approval",
 		methodName: "Approval",
 		description:
-			"Méthode de vote où les participants doivent indiquer s'ils étaient favorable ou non au candidat pour chaque candidat.",
+			"Méthode de vote où les participants doivent indiquer s'ils étaient favorable ou non au candidat, pour chaque candidat.",
 		results: [
 			{ name: "Emmanuel Macron", value: 25.01 },
 			{ name: "Marine Le Pen", value: 20.3 },
@@ -74,3 +74,20 @@ export const rankings = [
 		unit: "PERCENT",
 	},
 ]
+
+const candidates = rankings[0].results.map((d) => d.name)
+
+export const dataByCandidate = candidates.map((candidate) => {
+	return {
+		name: candidate,
+		color: `#${("00000" + ((Math.random() * (1 << 24)) | 0).toString(16)).slice(
+			-6
+		)}`,
+		data: rankings.map((r) => {
+			return {
+				methodId: r.methodId,
+				value: r.results.find((result) => result.name === candidate).value,
+			}
+		}),
+	}
+})
