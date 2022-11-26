@@ -1,7 +1,9 @@
 <script lang="ts">
 	import * as d3 from "d3"
-	import { dataByCandidate } from "../data"
+	import type { DataByCandidate } from "../data"
 	import { filters } from "../stores"
+
+	export let dataByCandidate: DataByCandidate
 
 	let windowWidth = 800,
 		windowHeight = 600,
@@ -51,13 +53,22 @@
 			stroke-width={3}
 			stroke-linejoin="round"
 		>
-			{#each candidate.data.filter((_, k) => $filters.methods[k]) as data, j}
+			{#each candidate.data as data, globalIndex}
+				{@const isShown = $filters.methods[globalIndex]}
 				{@const bandWidth = x.bandwidth() / shownMethods}
+				{@const localIndex = (() => {
+					let index = 0
+					for (let i = 0; i < globalIndex; i++) {
+						index += $filters.methods[i] ? 1 : 0
+					}
+					return index
+				})()}
 				<rect
-					x={x(candidate.name) + j * bandWidth}
-					y={y(data.value)}
-					width={bandWidth}
-					height={y(0) - y(data.value) - 1}
+					x={x(candidate.name) + localIndex * bandWidth}
+					y={isShown ? y(data.value) : height - padding.bottom}
+					width={isShown ? bandWidth : 0}
+					height={isShown ? y(0) - y(data.value) - 1 : 0}
+					style:transition="all 0.3s ease-in-out"
 				/>
 			{/each}
 		</g>
