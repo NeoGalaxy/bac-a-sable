@@ -4,6 +4,7 @@
 	import { filters } from "../stores"
 	import MethodSwitch from "./MethodSwitch/MethodSwitch.svelte"
 	import { rankings } from "../data"
+	import DoubleRadio from "./DoubleRadio.svelte"
 </script>
 
 <div class="sidebar">
@@ -22,13 +23,17 @@
 	<div class="rankings">
 		{#each rankings as ranking, i}
 			<Filter help={ranking.description}>
-				<Checkbox
-					bind:checked={$filters.methods[i]}
-					label={ranking.methodName}
-					name={ranking.methodId}
-					disabled={$filters.methods[i] &&
-						$filters.methods.filter((v) => v).length === 1}
-				/>
+				{#if $filters.comparison === 0}
+					<Checkbox
+						bind:checked={$filters.methods[i]}
+						label={ranking.methodName}
+						name={ranking.methodId}
+						disabled={$filters.methods[i] &&
+							$filters.methods.filter((v) => v).length === 1}
+					/>
+				{:else}
+					<DoubleRadio label={ranking.methodName} name={ranking.methodId} index={i} />
+				{/if}
 			</Filter>
 		{/each}
 	</div>

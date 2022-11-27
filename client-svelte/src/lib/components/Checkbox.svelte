@@ -25,6 +25,7 @@
 		background: transparent;
 		border: 2px solid var(--primary);
 		border-radius: 20%;
+		cursor: pointer;
 	}
 
 	input:checked {
