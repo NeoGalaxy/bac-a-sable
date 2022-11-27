@@ -22,7 +22,15 @@
 
 	$: y = d3
 		.scaleLinear()
-		.domain([0, d3.max(dataByCandidate, (d) => d3.max(d.data, (e) => e.value))])
+		.domain([
+			0,
+			d3.max(dataByCandidate, (d) =>
+				d3.max(
+					d.data.filter((_, i) => $filters.methods[i]),
+					(e) => e.value
+				)
+			),
+		])
 		.range([height - padding.bottom, padding.top])
 		.interpolate(d3.interpolateRound)
 
