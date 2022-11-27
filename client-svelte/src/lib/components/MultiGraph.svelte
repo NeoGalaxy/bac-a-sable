@@ -8,7 +8,7 @@
 	let windowWidth = 800,
 		windowHeight = 600,
 		navBarHeight = 60,
-		padding = { top: 5, right: 5, bottom: 50, left: 100 }
+		padding = { top: 5, right: 5, bottom: 40, left: 40 }
 	$: margin = { horizontal: 200, vertical: windowHeight / 7 }
 	$: width = windowWidth - margin.horizontal * 2
 	$: height = windowHeight - margin.vertical * 2

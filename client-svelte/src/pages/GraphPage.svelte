@@ -36,4 +36,9 @@
 		display: grid;
 		grid-template-columns: 20rem 1fr;
 	}
+
+	.graph {
+		display: flex;
+		justify-content: center;
+	}
 </style>
