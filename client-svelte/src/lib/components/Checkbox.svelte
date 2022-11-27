@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { hoveredBar } from "../stores"
+
 	export let checked: boolean
 	export let label: string
 	export let name: string
@@ -7,7 +9,14 @@
 
 <div>
 	<input type="checkbox" bind:checked {disabled} {name} id={name} />
-	<label for={name}>{label}</label>
+	<label
+		for={name}
+		style={$hoveredBar && $hoveredBar.methodId === name
+			? `color: ${$hoveredBar.color}; font-weight: 600`
+			: ""}
+	>
+		{label}
+	</label>
 </div>
 
 <style>
@@ -34,5 +43,9 @@
 
 	input:disabled {
 		background: grey;
+	}
+
+	label {
+		transition: color 0.15s ease-in-out;
 	}
 </style>

@@ -1,3 +1,5 @@
+import type { DataByCandidate } from "./types"
+
 export default [
 	{ name: "Emmanuel Macron", value: 24.01 },
 	{ name: "Marine Le Pen", value: 21.3 },
@@ -90,15 +92,6 @@ export const rankings = [
 ]
 
 const candidates = rankings[0].results.map((d) => d.name)
-
-export type DataByCandidate = {
-	name: string
-	color: string
-	data: {
-		methodId: string
-		value: number
-	}[]
-}[]
 
 export const dataByCandidate: DataByCandidate = candidates.map((candidate) => {
 	return {

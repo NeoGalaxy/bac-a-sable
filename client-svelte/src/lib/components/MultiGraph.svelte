@@ -1,14 +1,15 @@
 <script lang="ts">
 	import * as d3 from "d3"
-	import type { DataByCandidate } from "../data"
-	import { filters } from "../stores"
+	import type { DataByCandidate } from "../types"
+	import { filters, hoveredBar } from "../stores"
+	import { printPercentage } from "../functions"
 
 	export let dataByCandidate: DataByCandidate
 
 	let windowWidth = 800,
 		windowHeight = 600,
 		navBarHeight = 60,
-		padding = { top: 5, right: 5, bottom: 40, left: 40 }
+		padding = { top: 40, right: 5, bottom: 40, left: 40 }
 	$: margin = { horizontal: 200, vertical: windowHeight / 7 }
 	$: width = windowWidth - margin.horizontal * 2
 	$: height = windowHeight - margin.vertical * 2
@@ -55,9 +56,10 @@
          margin-top: {margin.vertical - navBarHeight / 2}px"
 >
 	{#each dataByCandidate as candidate}
+		{@const borderColor = d3.color(candidate.color).darker(0.4).formatHex()}
 		<g
 			fill={candidate.color}
-			style="stroke: {d3.color(candidate.color).darker(0.4).formatHex()}"
+			style="stroke: {borderColor}"
 			stroke-width={3}
 			stroke-linejoin="round"
 		>
@@ -78,6 +80,39 @@
 					height={isShown ? y(0) - y(data.value) - 1 : 0}
 					style:transition="all 0.5s cubic-bezier(.64,.02,.73,.18)"
 				/>
+
+				<rect
+					class="bar-zone"
+					x={x(candidate.name) + localIndex * bandWidth}
+					y={isShown ? padding.top : height - padding.bottom}
+					width={isShown ? bandWidth : 0}
+					height={isShown ? y(0) - padding.bottom : 0}
+					on:mouseenter={() => {
+						$hoveredBar = { methodId: data.methodId, color: borderColor }
+					}}
+					on:mouseleave={() => {
+						$hoveredBar = null
+					}}
+				/>
+				{#if isShown}
+					<g class="tooltip">
+						<line
+							x1={x(candidate.name) + localIndex * bandWidth + bandWidth / 2}
+							y1={28}
+							x2={x(candidate.name) + localIndex * bandWidth + bandWidth / 2}
+							y2={y(data.value) - 2}
+						/>
+						<text
+							x={x(candidate.name) + localIndex * bandWidth + bandWidth / 2}
+							y={15}
+							fill={borderColor}
+							dominant-baseline="middle"
+							text-anchor="middle"
+						>
+							{printPercentage(data.value)}
+						</text>
+					</g>
+				{/if}
 			{/each}
 		</g>
 	{/each}
@@ -98,5 +133,22 @@
 	svg > g :global(text) {
 		stroke: initial;
 		stroke-width: initial;
+	}
+
+	.tooltip {
+		display: none;
+	}
+
+	.bar-zone {
+		fill: transparent;
+		stroke: transparent;
+	}
+
+	.bar-zone:hover + .tooltip {
+		display: block;
+	}
+
+	line {
+		pointer-events: fill;
 	}
 </style>
