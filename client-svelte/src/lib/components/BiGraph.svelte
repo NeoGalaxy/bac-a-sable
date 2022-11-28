@@ -27,6 +27,12 @@
 		.range([height - padding.bottom, padding.top])
 		.interpolate(d3.interpolateRound)
 
+	$: legendX = d3
+		.scaleBand()
+		.domain(candidates.map((d, i) => i.toString()))
+		.range([0, width - padding.right * 2])
+		.padding(0.1)
+
 	let verticalAxis: SVGGElement, horizontalAxis: SVGGElement
 
 	$: d3VAxis = d3
@@ -42,8 +48,9 @@
 
 <svelte:window bind:innerHeight={windowHeight} bind:innerWidth={windowWidth} />
 
+
 <svg
-	viewBox="0 0 {width} {height}"
+	viewBox="0 0 {width} {height + /* ajout de marge dans le svg */40}"
 	style="max-width: {width}px;
 margin-top: {margin.vertical - navBarHeight / 2}px"
 >
@@ -122,6 +129,29 @@ margin-top: {margin.vertical - navBarHeight / 2}px"
 					</text>
 				</g>
 			</g>
+		</g>
+	{/each}
+
+	{#each candidates as candidate, i}
+		{@const yPos = height + 10 + 20 * (i % 2)}
+		{@const xPos = legendX((Math.floor(i/2) * 2).toString())}
+		{@const textColor = d3.color(candidate.color).darker(2).formatHex()}
+		<g fill={candidate.color}>
+			<circle
+				cx={xPos}
+				cy={yPos}
+				r={4}
+			/>
+			<text
+				x={xPos + 8}
+				y={yPos}
+				dominant-baseline="middle"
+				text-anchor="start"
+				fill={textColor}
+				font-size="0.9em"
+			>
+				{candidate.name}
+			</text>
 		</g>
 	{/each}
 </svg>
