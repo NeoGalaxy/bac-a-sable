@@ -100,7 +100,7 @@ const colors = [
 	{ name: "Benoît Hamon", color: "#FF8080" },
 	{ name: "Jean Lassalle", color: "#a5c1df" },
 	{ name: "Marine Le Pen", color: "#0D378A" },
-	{ name: "Emmanuel Macron", color: "#ffeb00" },
+	{ name: "Emmanuel Macron", color: "#e9d600" },
 	{ name: "Jean-Luc Mélenchon", color: "#cc2443" },
 	{ name: "Philippe Poutou", color: "#dd0000" },
 ]

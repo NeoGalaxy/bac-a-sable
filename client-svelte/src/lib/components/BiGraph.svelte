@@ -63,6 +63,7 @@ margin-top: {margin.vertical - navBarHeight / 2}px"
 	{#each candidates as candidate, i}
 		{@const xPos = x(dataX.results[i].value)}
 		{@const yPos = y(dataY.results[i].value)}
+		{@const darkerColor = d3.color(candidate.color).darker(0.4).formatHex()}
 		<g fill={candidate.color}>
 			<circle
 				cx={xPos}
@@ -73,6 +74,7 @@ margin-top: {margin.vertical - navBarHeight / 2}px"
 			<g class="tooltip" stroke={candidate.color} fill={candidate.color}>
 				<line x1={xPos} y1={28} x2={xPos} y2={yPos} />
 				<text
+					fill={darkerColor}
 					x={xPos}
 					y={15}
 					dominant-baseline="middle"
