@@ -10,6 +10,22 @@ export type HoveredBar = {
 	color: string
 }
 
+export type Candidate = {
+	name: string
+	color: string
+}
+
+export type DataByMethod = {
+	methodId: string
+	methodName: string
+	description: string
+	results: {
+		name: string
+		value: number
+	}[]
+	unit: string
+}
+
 export type DataByCandidate = {
 	name: string
 	color: string
@@ -17,4 +33,4 @@ export type DataByCandidate = {
 		methodId: string
 		value: number
 	}[]
-}[]
+}

@@ -4,7 +4,7 @@
 	import { filters, hoveredBar } from "../stores"
 	import { printPercentage } from "../functions"
 
-	export let dataByCandidate: DataByCandidate
+	export let dataByCandidate: DataByCandidate[]
 
 	let windowWidth = 800,
 		windowHeight = 600,

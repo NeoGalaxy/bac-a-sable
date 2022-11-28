@@ -1,4 +1,4 @@
-import type { DataByCandidate } from "./types"
+import type { Candidate, DataByCandidate, DataByMethod } from "./types"
 
 export default [
 	{ name: "Emmanuel Macron", value: 24.01 },
@@ -28,7 +28,7 @@ export const correction = [
 	{ name: "Jean Lassalle", value: 1.98 },
 ]
 
-export const rankings = [
+export const rankings: DataByMethod[] = [
 	{
 		methodId: "borda4",
 		methodName: "Borda 4",
@@ -91,19 +91,27 @@ export const rankings = [
 	},
 ]
 
-const candidates = rankings[0].results.map((d) => d.name)
-
-export const dataByCandidate: DataByCandidate = candidates.map((candidate) => {
+export const candidates: Candidate[] = rankings[0].results.map((d) => {
 	return {
-		name: candidate,
+		name: d.name,
 		color: `#${("00000" + ((Math.random() * (1 << 24)) | 0).toString(16)).slice(
 			-6
 		)}`,
-		data: rankings.map((r) => {
-			return {
-				methodId: r.methodId,
-				value: r.results.find((result) => result.name === candidate).value,
-			}
-		}),
 	}
 })
+
+export const dataByCandidate: DataByCandidate[] = candidates.map(
+	(candidate) => {
+		return {
+			name: candidate.name,
+			color: candidate.color,
+			data: rankings.map((r) => {
+				return {
+					methodId: r.methodId,
+					value: r.results.find((result) => result.name === candidate.name)
+						.value,
+				}
+			}),
+		}
+	}
+)

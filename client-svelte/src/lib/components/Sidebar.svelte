@@ -21,6 +21,14 @@
 	<MethodSwitch />
 
 	<div class="rankings">
+		{#if $filters.comparison === 1}
+			<div>
+				<p>x</p>
+				<p>y</p>
+				<p>scrutin</p>
+			</div>
+		{/if}
+
 		{#each rankings as ranking, i}
 			<Filter help={ranking.description}>
 				{#if $filters.comparison === 0}
@@ -32,7 +40,11 @@
 							$filters.methods.filter((v) => v).length === 1}
 					/>
 				{:else}
-					<DoubleRadio label={ranking.methodName} name={ranking.methodId} index={i} />
+					<DoubleRadio
+						label={ranking.methodName}
+						name={ranking.methodId}
+						index={i}
+					/>
 				{/if}
 			</Filter>
 		{/each}
@@ -53,5 +65,22 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
+	}
+
+	.rankings div {
+		display: flex;
+		gap: 1rem;
+		font-weight: 600;
+	}
+
+	.rankings div p {
+		text-align: center;
+		margin: 0;
+		width: 0.9rem;
+	}
+
+	.rankings div p:last-of-type {
+		text-align: left;
+		width: initial;
 	}
 </style>
