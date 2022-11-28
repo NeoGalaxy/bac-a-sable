@@ -1,6 +1,4 @@
 <script lang="ts">
-	export let help: string
-
 	let dialog: HTMLDialogElement
 
 	function dialogClickHandler(e: MouseEvent) {
@@ -20,7 +18,7 @@
 
 <button on:click={() => dialog.showModal()}>?</button>
 <dialog bind:this={dialog} on:keypress={() => {}} on:click={dialogClickHandler}>
-	{help}
+	<slot />
 </dialog>
 
 <style>
@@ -52,5 +50,7 @@
 		border: none;
 		border-radius: var(--radius);
 		max-width: 50ch;
+		max-height: 50ch;
+		line-height: 1.2;
 	}
 </style>

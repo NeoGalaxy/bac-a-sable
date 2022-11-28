@@ -1,12 +1,14 @@
 <script lang="ts">
 	import Help from "./Help.svelte"
 
-	export let help: string
+	export let help: string = undefined
 </script>
 
 <div>
 	<slot />
-	<Help {help} />
+	<Help>
+		<slot name="help">{help}</slot>
+	</Help>
 </div>
 
 <style>

@@ -10,7 +10,27 @@
 <div class="sidebar">
 	<h1>Comparaison des méthodes de scrutin</h1>
 
-	<Filter help="Explication de la correction des biais">
+	<Filter>
+		<div slot="help">
+			<h1 style="margin-top: 0">Correction des biais</h1>
+			<p style="margin: 0">
+				Les données ont été récoltées sur un sous-ensemble de la population qui
+				n’est pas parfaitement représentatif des opinions de la population
+				complète. Ce biais est corrigé de la manière suivante&nbsp;: on demande
+				aux votants leur vote réel à l’élection présidentielle, ce qui donne un
+				premier classement des candidats. Ensuite, on récupère les résultats
+				officiels de l’élection, et on compare.
+			</p>
+			<p style="margin-bottom: 0">
+				Si un candidat a une proportion des votes plus élevée dans l’élection
+				officielle, alors il est sous-représenté dans nos données. Dans le cas
+				inverse, il est sur-représenté. On calcule ainsi pour chaque candidat un
+				coefficient qui permet de redresser les données, et de faire en sorte
+				que celles-ci soient plus représentatives de l’avis global de la
+				population.
+			</p>
+		</div>
+
 		<Checkbox
 			bind:checked={$filters.biasCorrection}
 			label="Corriger les biais"
@@ -31,6 +51,11 @@
 
 		{#each rankings as ranking, i}
 			<Filter help={ranking.description}>
+				<div slot="help" class="help">
+					<h1 style="margin-top: 0">{ranking.methodName}</h1>
+					<p style="margin: 0">{ranking.description}</p>
+				</div>
+
 				{#if $filters.comparison === 0}
 					<Checkbox
 						bind:checked={$filters.methods[i]}
@@ -67,10 +92,11 @@
 		gap: 1rem;
 	}
 
-	.rankings div {
+	.rankings div:not(.help) {
 		display: flex;
 		gap: 1rem;
 		font-weight: 600;
+		color: var(--primary);
 	}
 
 	.rankings div p {
