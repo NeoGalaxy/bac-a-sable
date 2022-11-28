@@ -11,8 +11,11 @@
 		<li>Syméon SMITH</li>
 	</ul>
 
-	<h2>Grand titre</h2>
-	<h3>Sous titre</h3>
+	<h2>Introduction </h2>
+	<h2>Jeu de données et représentation sur l'application</h2>
+	<h2>Architecture de l'application</h2>
+	<h3>Technologies utilisées</h3>
+	<h2>Conclusion</h2>
 </main>
 
 <style>
