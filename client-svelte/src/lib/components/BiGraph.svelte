@@ -76,9 +76,11 @@ margin-top: {margin.vertical - navBarHeight / 2}px"
 				cx={xPos}
 				cy={yPos}
 				r={4}
+				stroke={darkerColor}
+				stroke-width="2"
 				style:transition="all 0.5s cubic-bezier(.64,.02,.73,.18)"
 			/>
-			<g class="tooltip" stroke={candidate.color} fill={candidate.color}>
+			<g class="tooltip" stroke={candidate.color} fill={candidate.color} font-weight={700}>
 				<line x1={xPos} y1={28} x2={xPos} y2={yPos} />
 				<text
 					fill={darkerColor}
@@ -115,6 +117,7 @@ margin-top: {margin.vertical - navBarHeight / 2}px"
 						y={yPos}
 						dominant-baseline="middle"
 						text-anchor="end"
+						fill={darkerColor}
 					>
 						{printPercentage(dataY.results[i].value)}
 					</text>
@@ -126,7 +129,7 @@ margin-top: {margin.vertical - navBarHeight / 2}px"
 						y2={height - 18}
 						stroke-width={2}
 					/>
-					<text x={xPos} y={height - 5} text-anchor="middle">
+					<text x={xPos} y={height - 5} text-anchor="middle" fill={darkerColor}>
 						{printPercentage(dataX.results[i].value)}
 					</text>
 				</g>
@@ -137,12 +140,15 @@ margin-top: {margin.vertical - navBarHeight / 2}px"
 	{#each candidates as candidate, i}
 		{@const yPos = height + 10 + 20 * (i % 2)}
 		{@const xPos = legendX((Math.floor(i/2) * 2).toString())}
-		{@const textColor = d3.color(candidate.color).darker(2).formatHex()}
+		{@const textColor = d3.color(candidate.color).darker(0.6).formatHex()}
+		{@const darkerColor = d3.color(candidate.color).darker(0.4).formatHex()}
 		<g fill={candidate.color}>
 			<circle
 				cx={xPos}
 				cy={yPos}
 				r={4}
+				stroke={darkerColor}
+				stroke-width="2"
 			/>
 			<text
 				x={xPos + 8}
