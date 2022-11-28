@@ -91,12 +91,24 @@ export const rankings: DataByMethod[] = [
 	},
 ]
 
+const colors = [
+	{ name: "Nathalie Arthaud", color: "#bb0000" },
+	{ name: "François Asselineau", color: "#118088" },
+	{ name: "Jacques Cheminade", color: "#26c4ec" },
+	{ name: "Nicolas Dupont-Aignan", color: "#0082C4" },
+	{ name: "François Fillon", color: "#0066cc" },
+	{ name: "Benoît Hamon", color: "#FF8080" },
+	{ name: "Jean Lassalle", color: "#a5c1df" },
+	{ name: "Marine Le Pen", color: "#0D378A" },
+	{ name: "Emmanuel Macron", color: "#ffeb00" },
+	{ name: "Jean-Luc Mélenchon", color: "#cc2443" },
+	{ name: "Philippe Poutou", color: "#dd0000" },
+]
+
 export const candidates: Candidate[] = rankings[0].results.map((d) => {
 	return {
 		name: d.name,
-		color: `#${("00000" + ((Math.random() * (1 << 24)) | 0).toString(16)).slice(
-			-6
-		)}`,
+		color: colors.find((c) => c.name === d.name).color,
 	}
 })
 
