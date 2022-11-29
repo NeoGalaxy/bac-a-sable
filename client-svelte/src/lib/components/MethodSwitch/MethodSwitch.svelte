@@ -3,8 +3,8 @@
 </script>
 
 <div>
-	<ButtonSwitch id={0} name="Méthode 1" />
-	<ButtonSwitch id={1} name="Méthode 2" />
+	<ButtonSwitch id={0} name="Multi-graphe" />
+	<ButtonSwitch id={1} name="Bi-graphe" />
 </div>
 
 <style>
