@@ -11,7 +11,7 @@
 		windowHeight = 600,
 		navBarHeight = 60,
 		padding = { top: 40, right: 15, bottom: 40, left: 60 }
-	$: margin = { horizontal: 200, vertical: windowHeight / 7 }
+	$: margin = { horizontal: 200, vertical: windowHeight / 5 }
 	$: width = windowWidth - margin.horizontal * 2
 	$: height = windowHeight - margin.vertical * 2
 
@@ -26,12 +26,6 @@
 		.domain([0, d3.max(dataY.results, (d) => d.value) + domainPadding])
 		.range([height - padding.bottom, padding.top])
 		.interpolate(d3.interpolateRound)
-
-	$: legendX = d3
-		.scaleBand()
-		.domain(candidates.map((d, i) => i.toString()))
-		.range([0, width - padding.right * 2])
-		.padding(0.1)
 
 	let verticalAxis: SVGGElement, horizontalAxis: SVGGElement
 
@@ -48,121 +42,119 @@
 
 <svelte:window bind:innerHeight={windowHeight} bind:innerWidth={windowWidth} />
 
+<div class="container" style="width: {width}px;">
+	
+	<svg
+		viewBox="0 0 {width} {height}"
+		style="max-width: {width}px;
+		margin-top: {margin.vertical - navBarHeight / 2}px"
+	>
+		<text text-anchor="end" x={width} y={height - 5}>
+			{dataX.methodName}
+		</text>
 
-<svg
-	viewBox="0 0 {width} {height + /* ajout de marge dans le svg */40}"
-	style="max-width: {width}px;
-margin-top: {margin.vertical - navBarHeight / 2}px"
->
-	<text text-anchor="end" x={width} y={height - 5}>
-		{dataX.methodName}
-	</text>
+		<text text-anchor="start" x={0} y={23} dominant-baseline="hanging">
+			{dataY.methodName}
+		</text>
 
-	<text text-anchor="start" x={0} y={23} dominant-baseline="hanging">
-		{dataY.methodName}
-	</text>
-
-	<g bind:this={verticalAxis} transform="translate({padding.left}, 0)" />
-	<g
-		bind:this={horizontalAxis}
-		transform="translate(0, {height - padding.bottom})"
-	/>
-	{#each candidates as candidate, i}
-		{@const xPos = x(dataX.results[i].value)}
-		{@const yPos = y(dataY.results[i].value)}
-		{@const darkerColor = d3.color(candidate.color).darker(0.4).formatHex()}
-		<g fill={candidate.color}>
-			<circle
-				cx={xPos}
-				cy={yPos}
-				r={4}
-				stroke={darkerColor}
-				stroke-width="2"
-				style:transition="all 0.5s cubic-bezier(.64,.02,.73,.18)"
-			/>
-			<g class="tooltip" stroke={candidate.color} fill={candidate.color} font-weight={700}>
-				<line x1={xPos} y1={28} x2={xPos} y2={yPos} />
-				<text
-					fill={darkerColor}
-					x={xPos}
-					y={15}
-					dominant-baseline="middle"
-					text-anchor={xPos < 100
-						? "start"
-						: width - xPos < 100
-						? "end"
-						: "middle"}
-				>
-					{candidate.name}
-				</text>
-
-				<g class="percentages">
-					<line
-						x1={padding.left - 5}
-						y1={yPos}
-						x2={xPos}
-						y2={yPos}
-						stroke-width={2}
-					/>
-					<rect
-						fill="white"
-						stroke="transparent"
-						x={0}
-						y={yPos - 12}
-						width={padding.left - 7}
-						height={22}
-					/>
+		<g bind:this={verticalAxis} transform="translate({padding.left}, 0)" />
+		<g
+			bind:this={horizontalAxis}
+			transform="translate(0, {height - padding.bottom})"
+		/>
+		{#each candidates as candidate, i}
+			{@const xPos = x(dataX.results[i].value)}
+			{@const yPos = y(dataY.results[i].value)}
+			{@const darkerColor = d3.color(candidate.color).darker(0.4).formatHex()}
+			<g fill={candidate.color}>
+				<circle
+					cx={xPos}
+					cy={yPos}
+					r={4}
+					stroke={darkerColor}
+					stroke-width="2"
+					style:transition="all 0.5s cubic-bezier(.64,.02,.73,.18)"
+				/>
+				<g class="tooltip" stroke={candidate.color} fill={candidate.color} font-weight={700}>
+					<line x1={xPos} y1={28} x2={xPos} y2={yPos} />
 					<text
-						x={padding.left - 8}
-						y={yPos}
-						dominant-baseline="middle"
-						text-anchor="end"
 						fill={darkerColor}
+						x={xPos}
+						y={15}
+						dominant-baseline="middle"
+						text-anchor={xPos < 100
+							? "start"
+							: width - xPos < 100
+							? "end"
+							: "middle"}
 					>
-						{printPercentage(dataY.results[i].value)}
+						{candidate.name}
 					</text>
 
-					<line
-						x1={xPos}
-						y1={yPos}
-						x2={xPos}
-						y2={height - 18}
-						stroke-width={2}
-					/>
-					<text x={xPos} y={height - 5} text-anchor="middle" fill={darkerColor}>
-						{printPercentage(dataX.results[i].value)}
-					</text>
+					<g class="percentages">
+						<line
+							x1={padding.left - 5}
+							y1={yPos}
+							x2={xPos}
+							y2={yPos}
+							stroke-width={2}
+						/>
+						<rect
+							fill="white"
+							stroke="transparent"
+							x={0}
+							y={yPos - 12}
+							width={padding.left - 7}
+							height={22}
+						/>
+						<text
+							x={padding.left - 8}
+							y={yPos}
+							dominant-baseline="middle"
+							text-anchor="end"
+							fill={darkerColor}
+						>
+							{printPercentage(dataY.results[i].value)}
+						</text>
+
+						<line
+							x1={xPos}
+							y1={yPos}
+							x2={xPos}
+							y2={height - 18}
+							stroke-width={2}
+						/>
+						<text x={xPos} y={height - 5} text-anchor="middle" fill={darkerColor}>
+							{printPercentage(dataX.results[i].value)}
+						</text>
+					</g>
 				</g>
 			</g>
-		</g>
-	{/each}
+		{/each}
+	</svg>
 
-	{#each candidates as candidate, i}
-		{@const yPos = height + 10 + 20 * (i % 2)}
-		{@const xPos = legendX((Math.floor(i/2) * 2).toString())}
-		{@const textColor = d3.color(candidate.color).darker(0.6).formatHex()}
-		{@const darkerColor = d3.color(candidate.color).darker(0.4).formatHex()}
-		<g fill={candidate.color}>
-			<circle
-				cx={xPos}
-				cy={yPos}
-				r={4}
-				stroke={darkerColor}
-				stroke-width="2"
-			/>
-			<text
-				x={xPos + 8}
-				y={yPos}
-				dominant-baseline="middle"
-				text-anchor="start"
-				fill={textColor}
-				font-size="0.9em"
-			>
-				{candidate.name}
-			</text>
-		</g>
-	{/each}
-</svg>
+	<aside class="legend">
+		{#each candidates as candidate, i}
+			{@const textColor = d3.color(candidate.color).darker(0.6).formatHex()}
+			{@const darkerColor = d3.color(candidate.color).darker(0.4).formatHex()}
+			<div class="candidate-legend">
+				<svg viewBox="0 0 10.2 10.2" style="width: 10.2px">
+					<circle
+						fill={candidate.color}
+						cx=5.1
+						cy=5.1
+						r=4
+						stroke={darkerColor}
+						stroke-width="2"
+					/>
+				</svg>
+				<span>
+					{candidate.name}
+				</span>
+			</div>
+		{/each}
+	</aside>
+</div>
 
 <style>
 	svg > g {
@@ -194,5 +186,11 @@ margin-top: {margin.vertical - navBarHeight / 2}px"
 
 	line {
 		pointer-events: fill;
+	}
+
+	.legend {
+		display:  flex;
+		flex-wrap: wrap;
+		gap: 0 1em;
 	}
 </style>
