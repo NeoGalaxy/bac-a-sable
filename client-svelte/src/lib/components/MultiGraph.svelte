@@ -78,7 +78,7 @@
 					y={isShown ? y(data.value) : height - padding.bottom}
 					width={isShown ? bandWidth : 0}
 					height={isShown ? y(0) - y(data.value) - 1 : 0}
-					style:transition="all 0.5s cubic-bezier(.64,.02,.73,.18)"
+					style:transition="all 0.5s ease-in-out"
 				/>
 
 				<rect

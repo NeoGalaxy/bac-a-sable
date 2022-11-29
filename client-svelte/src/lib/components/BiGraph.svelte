@@ -73,7 +73,7 @@
 					r={4}
 					stroke={darkerColor}
 					stroke-width="2"
-					style:transition="all 0.5s cubic-bezier(.64,.02,.73,.18)"
+					style:transition="all 0.5s ease-in-out"
 				/>
 				<g class="tooltip" stroke={candidate.color} fill={candidate.color} font-weight={700}>
 					<line x1={xPos} y1={28} x2={xPos} y2={yPos} />
