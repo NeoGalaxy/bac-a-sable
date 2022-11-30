@@ -136,7 +136,8 @@
 	}
 
 	.tooltip {
-		display: none;
+		opacity: 0;
+		transition: opacity 0.1s ease-in-out;
 	}
 
 	.bar-zone {
@@ -145,7 +146,7 @@
 	}
 
 	.bar-zone:hover + .tooltip {
-		display: block;
+		opacity: 1;
 	}
 
 	line {

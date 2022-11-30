@@ -13,7 +13,7 @@
 		padding = { top: 40, right: 15, bottom: 40, left: 60 }
 	$: margin = { horizontal: 200, vertical: windowHeight / 5 }
 	$: width = windowWidth - margin.horizontal * 2
-	$: height = windowHeight - margin.vertical * 2
+	$: height = windowHeight - margin.vertical * 2 - 55
 
 	let domainPadding = 2
 	$: x = d3
@@ -38,12 +38,13 @@
 
 	$: d3VAxis.selectAll("path, line").attr("style", "stroke: var(--primary)")
 	$: d3HAxis.selectAll("path, line").attr("style", "stroke: var(--primary)")
+
+	let hover: string = null
 </script>
 
 <svelte:window bind:innerHeight={windowHeight} bind:innerWidth={windowWidth} />
 
 <div class="container" style="width: {width}px;">
-	
 	<svg
 		viewBox="0 0 {width} {height}"
 		style="max-width: {width}px;
@@ -74,8 +75,14 @@
 					stroke={darkerColor}
 					stroke-width="2"
 					style:transition="all 0.5s ease-in-out"
+					class:active={hover === candidate.name}
 				/>
-				<g class="tooltip" stroke={candidate.color} fill={candidate.color} font-weight={700}>
+				<g
+					class="tooltip"
+					stroke={candidate.color}
+					fill={candidate.color}
+					font-weight={700}
+				>
 					<line x1={xPos} y1={28} x2={xPos} y2={yPos} />
 					<text
 						fill={darkerColor}
@@ -101,11 +108,11 @@
 						/>
 						<rect
 							fill="white"
-							stroke="transparent"
+							stroke-width={0}
 							x={0}
-							y={yPos - 12}
-							width={padding.left - 7}
-							height={22}
+							y={yPos - 10}
+							width={padding.left - 8}
+							height={16}
 						/>
 						<text
 							x={padding.left - 8}
@@ -124,7 +131,12 @@
 							y2={height - 18}
 							stroke-width={2}
 						/>
-						<text x={xPos} y={height - 5} text-anchor="middle" fill={darkerColor}>
+						<text
+							x={xPos}
+							y={height - 5}
+							text-anchor="middle"
+							fill={darkerColor}
+						>
 							{printPercentage(dataX.results[i].value)}
 						</text>
 					</g>
@@ -137,18 +149,22 @@
 		{#each candidates as candidate, i}
 			{@const textColor = d3.color(candidate.color).darker(0.6).formatHex()}
 			{@const darkerColor = d3.color(candidate.color).darker(0.4).formatHex()}
-			<div class="candidate-legend">
+			<div
+				class="candidate-legend"
+				on:mouseenter={() => (hover = candidate.name)}
+				on:mouseleave={() => (hover = null)}
+			>
 				<svg viewBox="0 0 10.2 10.2" style="width: 10.2px">
 					<circle
 						fill={candidate.color}
-						cx=5.1
-						cy=5.1
-						r=4
+						cx="5.1"
+						cy="5.1"
+						r="4"
 						stroke={darkerColor}
 						stroke-width="2"
 					/>
 				</svg>
-				<span>
+				<span style:color={textColor}>
 					{candidate.name}
 				</span>
 			</div>
@@ -176,7 +192,8 @@
 		transition: opacity 0.1s ease-in-out;
 	}
 
-	circle:hover + .tooltip {
+	circle:hover + .tooltip,
+	.active + .tooltip {
 		opacity: 1;
 	}
 
@@ -188,9 +205,18 @@
 		pointer-events: fill;
 	}
 
+	.candidate-legend {
+		cursor: pointer;
+		font-size: 0.9rem;
+		display: flex;
+		gap: 0.4rem;
+	}
+
 	.legend {
-		display:  flex;
+		margin-top: 1rem;
+		display: flex;
 		flex-wrap: wrap;
-		gap: 0 1em;
+		justify-content: center;
+		gap: 0.5rem 1rem;
 	}
 </style>
