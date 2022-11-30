@@ -107,10 +107,11 @@
 		<strong>A</strong> par l’analyse de GreenIT, avec un EcoIndex autour de
 		<strong>95</strong>, une émission autour de
 		<strong>1,1 gCO2e</strong> pour une taille totale d’environ
-		<strong>150 Ko</strong>. L’analyse des bonnes pratiques révèle uniquement
-		des aspects sur lesquels nous n’avons pas de contrôle dû au choix de ne pas
-		utiliser de serveur (headers de caching et compression des ressources) ou à
-		l’utilisation du service Google Fonts pour la police de l’application.
+		<strong>150 Ko</strong> (résultats fluctuants légèrement selon le navigateur
+		utilisé). L’analyse des bonnes pratiques révèle uniquement des aspects sur lesquels
+		nous n’avons pas de contrôle dû au choix de ne pas utiliser de serveur (headers
+		de caching et compression des ressources) ou à l’utilisation du service Google
+		Fonts pour la police de l’application.
 	</p>
 	<p>
 		Ce score est dû à l’efficacité de Svelte, mais la taille de la page peut
