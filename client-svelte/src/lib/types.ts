@@ -13,6 +13,7 @@ export type HoveredBar = {
 export type Candidate = {
 	name: string
 	color: string
+	correction: number
 }
 
 export type DataByMethod = {

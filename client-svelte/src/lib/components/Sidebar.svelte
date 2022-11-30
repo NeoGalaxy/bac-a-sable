@@ -3,7 +3,7 @@
 	import Filter from "./Filter.svelte"
 	import { filters } from "../stores"
 	import MethodSwitch from "./MethodSwitch/MethodSwitch.svelte"
-	import { rankings } from "../data"
+	import { dataByMethod } from "../data"
 	import DoubleRadio from "./DoubleRadio.svelte"
 </script>
 
@@ -49,7 +49,7 @@
 			</div>
 		{/if}
 
-		{#each rankings as ranking, i}
+		{#each dataByMethod as ranking, i}
 			<Filter help={ranking.description}>
 				<div slot="help" class="help">
 					<h1 style="margin-top: 0">{ranking.methodName}</h1>
