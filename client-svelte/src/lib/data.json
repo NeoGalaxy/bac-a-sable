@@ -88,7 +88,7 @@
 			"Méthode de vote où les participants doivent indiquer doivent attribuer une note à chaque candidat, note allant -1 à 1.",
 		"results": [
 			{ "name": "Emmanuel Macron", "value":19.66},
-			{ "name": "Marine Le Pen", "value":    1.50},
+			{ "name": "Marine Le Pen", "value": 1.50},
 			{ "name": "François Fillon", "value": 3.98 },
 			{ "name": "Jean-Luc Mélenchon", "value": 38.42},
 			{ "name": "Benoît Hamon", "value":  16.96 },
@@ -101,48 +101,7 @@
 		],
 		"unit": "PERCENT"
 	},
-		{
-		"methodId": "stv4-11",
-		"methodName": "STV4-11",
-		"description":
-		"Méthode de vote où les participants Les participants sont invités à classer exactement 1 et 11 candidats. Signification des scores :11 = premier / 10 = deuxième / 9 = troisième / 8 = quatrième / ... / 1 = dernier candidat / rien = non classé.",
-		"results": [
-			{ "name": "Emmanuel Macron", "value":19.93},
-			{ "name": "Marine Le Pen", "value":    1.41},
-			{ "name": "François Fillon", "value": 3.96 },
-			{ "name": "Jean-Luc Mélenchon", "value": 37.89},
-			{ "name": "Benoît Hamon", "value":  16.72 },
-			{ "name": "Nathalie Arthaud", "value": 0.33},
-			{ "name": "Philippe Poutou", "value": 1.75},
-			{ "name": "Jacques Cheminade", "value": 0.18 },
-			{ "name": "François Asselineau", "value":   1.28 },
-			{ "name": "Nicolas Dupont-Aignan", "value":0.93 },
-			{ "name": "Jean Lassalle", "value": 0.51}
-		],
-		"unit": "PERCENT"
-	},
-		{
-		"methodId": "stv1-11",
-		"methodName": "STV1-11",
-		"description":
-			"Méthode de vote où les participants Les participants sont invités à classer exactement 1 et 11 candidats. Signification des scores :11 = premier / 10 = deuxième / 9 = troisième / 8 = quatrième / ... / 1 = dernier candidat / rien = non classé.",
-		"results": [
-			{ "name": "Emmanuel Macron", "value":19.25},
-			{ "name": "Marine Le Pen", "value":    1.38},
-			{ "name": "François Fillon", "value": 3.85 },
-			{ "name": "Jean-Luc Mélenchon", "value": 38.25},
-			{ "name": "Benoît Hamon", "value":  17.10 },
-			{ "name": "Nathalie Arthaud", "value": 0.22},
-			{ "name": "Philippe Poutou", "value": 1.98},
-			{ "name": "Jacques Cheminade", "value": 0.14 },
-			{ "name": "François Asselineau", "value":   1.40 },
-			{ "name": "Nicolas Dupont-Aignan", "value":1.03 },
-			{ "name": "Jean Lassalle", "value": 0.58}
-		],
-		"unit": "PERCENT"
-	},
-		
-		{
+	{
 		"methodId": "ev-continuous",
 		"methodName": "Evaluation continue",
 		"description":
