@@ -1,0 +1,63 @@
+################################################################################
+# Voter Autrement 2017
+################################################################################
+#
+# This dataset Voter Autrement is made available under the Open Database
+# License: http://opendatacommons.org/licenses/odbl/1.0/. Any rights in
+# individual contents of the database are licensed under the Database
+# Contents License: http://opendatacommons.org/licenses/dbcl/1.0/
+#
+# Antoinette Baujard, GATE Lyon Saint-Étienne, Université Jean Monnet, Saint-Étienne
+# Renaud Blanch, LIG, Univ. Grenoble-Alpes
+# Sylvain Bouveret, LIG, Univ. Grenoble-Alpes
+# François Durand, LAMSADE, Université Paris-Dauphine
+# Herrade Igersheim, CNRS, BETA, Université de Strasbourg
+# Jérôme Lang, LAMSADE CNRS, Université Paris-Dauphine
+# Annick Laruelle, UPV-EHU, Universidad del País Vasco
+# Jean-François Laslier, CNRS, Paris School of Economics
+# Isabelle Lebon, CREM, Universités Caen-Normandie et Rennes 1
+# Vincent Merlin, CNRS, CREM, Universités Caen-Normandie et Rennes 1
+#
+################################################################################
+#
+# Dataset: Online experiment approval voting.
+# Format: CSV with header
+#
+# Participants were asked to tick the candidates they approve. Meaning of the scores:
+# 0 = not approved / 1 = approved
+#
+# * Column 1: Ballot box (one of Official Election, Approval, Evaluation 0/1/2, Evaluation 0/1/2/3,
+#   Evaluation -1/0/1/2, Evaluation -1/0/1, Borda 4, STV 4-11, STV 1-11, Evaluation Continuous,
+#   Condorcet)
+# * Column 2: number of voters of Nathalie Arthaud
+# * Column 3: number of voters of François Asselineau
+# * Column 4: number of voters of Jacques Cheminade
+# * Column 5: number of voters of Nicolas Dupont-Aignan
+# * Column 6: number of voters of François Fillon
+# * Column 7: number of voters of Benoît Hamon
+# * Column 8: number of voters of Jean Lassalle
+# * Column 9: number of voters of Marine Le Pen
+# * Column 10: number of voters of Emmanuel Macron
+# * Column 11: number of voters of Jean-Luc Mélenchon
+# * Column 12: number of voters of Philippe Poutou
+# * Column 13: number of uncertain voters (pre-election questionnaire)
+# * Column 14: number of blank votes
+# * Column 15: number of abstainers
+# * Column 16: number of participants that are not registered on the official voter registry
+#              and hence cannot vote at the official election
+# * Column 17: number of participants who did not want to answer to the question
+# * Column 18: number of participants who did not answer to the question
+# * Column 20: total number of participants to this ballot box
+#
+################################################################################
+Ballot Box,Nathalie Arthaud,François Asselineau,Jacques Cheminade,Nicolas Dupont-Aignan,François Fillon,Benoît Hamon,Jean Lassalle,Marine Le Pen,Emmanuel Macron,Jean-Luc Mélenchon,Philippe Poutou,incertitude,blanc,abstention,non inscrit,ne se prononce pas,non répondu,total number
+Approval,61,244,28,195,787,3334,104,283,3977,7621,382,1369,428,543,208,175,337,20076
+Evaluation 0/1/2,17,94,9,51,251,1116,35,95,1275,2498,123,427,137,157,57,55,98,6495
+Evaluation 0/1/2/3,39,188,16,135,483,2321,71,173,2608,5114,262,873,280,382,144,118,192,13399
+Evaluation -1/0/1/2,35,178,22,149,532,2283,70,159,2619,5154,258,897,291,349,139,119,217,13471
+Evaluation -1/0/1,37,160,22,115,525,2239,68,198,2595,5071,226,877,277,339,121,118,209,13197
+Borda 4,33,131,13,103,421,1883,53,141,2149,4257,210,725,237,284,111,93,180,11024
+STV 4-11,37,144,20,105,445,1876,57,159,2236,4251,197,772,235,295,112,104,174,11219
+STV 1-11,24,154,16,113,422,1872,64,151,2108,4187,217,712,227,304,110,93,173,10947
+Evaluation Continuous,93,432,48,322,1288,5651,175,456,6525,12713,628,2222,715,893,336,291,496,33284
+Condorcet,95,434,48,322,1291,5648,176,455,6533,12725,627,2228,703,872,337,290,499,33283
