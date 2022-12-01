@@ -2,143 +2,191 @@
 	{
 		"methodId": "approval",
 		"methodName": "Approval",
-		"description":
-			"Méthode de vote où les participants doivent indiquer s'ils étaient favorable ou non au candidat, pour chaque candidat.",
+		"unit": "PERCENT",
 		"results": [
-			{ "name": "Emmanuel Macron", "value": 13.61 },
-			{ "name": "Marine Le Pen", "value": 1.57 },
-			{ "name": "François Fillon", "value": 3.61 },
-			{ "name": "Jean-Luc Mélenchon", "value": 25.16 },
-			{ "name": "Benoît Hamon", "value": 23.92 },
-			{ "name": "Nathalie Arthaud", "value": 7.07 },
-			{ "name": "Philippe Poutou", "value": 13.55 },
-			{ "name": "Jacques Cheminade", "value": 2.01 },
-			{ "name": "François Asselineau", "value": 2.44 },
-			{ "name": "Nicolas Dupont-Aignan", "value": 3.09 },
-			{ "name": "Jean Lassalle", "value": 3.97 }
+			{ "name": "Nathalie Arthaud", "value": 0.35848613070051716 },
+			{ "name": "Fran\u00e7ois Asselineau", "value": 1.4339445228020686 },
+			{ "name": "Jacques Cheminade", "value": 0.16455101081335213 },
+			{ "name": "Nicolas Dupont-Aignan", "value": 1.1459802538787025 },
+			{ "name": "Fran\u00e7ois Fillon", "value": 4.625058768218148 },
+			{ "name": "Beno\u00eet Hamon", "value": 19.59332393041843 },
+			{ "name": "Jean Lassalle", "value": 0.611189468735308 },
+			{ "name": "Marine Le Pen", "value": 1.663140573577809 },
+			{ "name": "Emmanuel Macron", "value": 23.372120357310767 },
+			{ "name": "Jean-Luc M\u00e9lenchon", "value": 44.78725905030559 },
+			{ "name": "Philippe Poutou", "value": 2.244945933239304 }
 		],
-		"unit": "PERCENT"
-	},
-   
-	{
-		"methodId": "ev012",
-		"methodName": "Evaluaion 012",
-		"description":
-			"Méthode de vote où les participants doivent indiquer doivent attribuer une note à chaque candidat, note allant 0 à 2.",
-		"results": [
-			{ "name": "Emmanuel Macron", "value": 19.63},
-			{ "name": "Marine Le Pen", "value":  1.46 },
-			{ "name": "François Fillon", "value": 3.86},
-			{ "name": "Jean-Luc Mélenchon", "value": 38.46 },
-			{ "name": "Benoît Hamon", "value": 17.18 },
-			{ "name": "Nathalie Arthaud", "value": 0.26 },
-			{ "name": "Philippe Poutou", "value": 1.89 },
-			{ "name": "Jacques Cheminade", "value": 0.138 },
-			{ "name": "François Asselineau", "value": 1.44 },
-			{ "name": "Nicolas Dupont-Aignan", "value": 0.7852194 },
-			{ "name": "Jean Lassalle", "value": 0.538 }
-		],
-		"unit": "PERCENT"
-	},
-	
-	{
-		"methodId": "ev0123",
-		"methodName": "Evaluaion 0123",
-		"description":
-			"Méthode de vote où les participants doivent indiquer doivent attribuer une note à chaque candidat, note allant 0 à 3.",
-		"results": [
-			{ "name": "Emmanuel Macron", "value":19.46},
-			{ "name": "Marine Le Pen", "value":   1.29},
-			{ "name": "François Fillon", "value": 3.60},
-			{ "name": "Jean-Luc Mélenchon", "value": 38.16},
-			{ "name": "Benoît Hamon", "value":  17.32 },
-			{ "name": "Nathalie Arthaud", "value": 0.29 },
-			{ "name": "Philippe Poutou", "value": 1.95},
-			{ "name": "Jacques Cheminade", "value": 0.12  },
-			{ "name": "François Asselineau", "value": 1.40 },
-			{ "name": "Nicolas Dupont-Aignan", "value": 1.01},
-			{ "name": "Jean Lassalle", "value": 0.52 }
-		],
-		"unit": "PERCENT"
+		"description": "M\u00e9thode de vote o\u00f9 les participants doivent indiquer s'ils \u00e9taient favorable ou non au candidat, pour chaque candidat."
 	},
 	{
-		"methodId": "ev1012",
-		"methodName": "Evaluaion -1012",
-		"description":
-			"Méthode de vote où les participants doivent indiquer doivent attribuer une note à chaque candidat, note allant -1 à 2.",
+		"methodId": "evaluation012",
+		"methodName": "Evaluation 0/1/2",
+		"unit": "PERCENT",
 		"results": [
-			{ "name": "Emmanuel Macron", "value":19.44},
-			{ "name": "Marine Le Pen", "value":    1.18},
-			{ "name": "François Fillon", "value": 3.95 },
-			{ "name": "Jean-Luc Mélenchon", "value": 38.26},
-			{ "name": "Benoît Hamon", "value":  16.94 },
-			{ "name": "Nathalie Arthaud", "value": 0.26},
-			{ "name": "Philippe Poutou", "value": 1.92},
-			{ "name": "Jacques Cheminade", "value": 0.16 },
-			{ "name": "François Asselineau", "value":  1.32 },
-			{ "name": "Nicolas Dupont-Aignan", "value": 1.11 },
-			{ "name": "Jean Lassalle", "value": 0.52}
+			{ "name": "Nathalie Arthaud", "value": 0.3055355859094177 },
+			{ "name": "Fran\u00e7ois Asselineau", "value": 1.6894320632638389 },
+			{ "name": "Jacques Cheminade", "value": 0.16175413371675054 },
+			{ "name": "Nicolas Dupont-Aignan", "value": 0.9166067577282531 },
+			{ "name": "Fran\u00e7ois Fillon", "value": 4.511143062544932 },
+			{ "name": "Beno\u00eet Hamon", "value": 20.057512580877066 },
+			{ "name": "Jean Lassalle", "value": 0.6290438533429188 },
+			{ "name": "Marine Le Pen", "value": 1.7074047447879224 },
+			{ "name": "Emmanuel Macron", "value": 22.915168943206325 },
+			{ "name": "Jean-Luc M\u00e9lenchon", "value": 44.89575844716032 },
+			{ "name": "Philippe Poutou", "value": 2.2106398274622574 }
 		],
-		"unit": "PERCENT"
+		"description": "M\u00e9thode de vote o\u00f9 les participants doivent indiquer doivent attribuer une note \u00e0 chaque candidat, note allant 0 \u00e0 2."
 	},
 	{
-		"methodId": "ev101",
-		"methodName": "Evaluaion -101",
-		"description":
-			"Méthode de vote où les participants doivent indiquer doivent attribuer une note à chaque candidat, note allant -1 à 1.",
+		"methodId": "evaluation0123",
+		"methodName": "Evaluation 0/1/2/3",
+		"unit": "PERCENT",
 		"results": [
-			{ "name": "Emmanuel Macron", "value":19.66},
-			{ "name": "Marine Le Pen", "value": 1.50},
-			{ "name": "François Fillon", "value": 3.98 },
-			{ "name": "Jean-Luc Mélenchon", "value": 38.42},
-			{ "name": "Benoît Hamon", "value":  16.96 },
-			{ "name": "Nathalie Arthaud", "value": 0.28},
-			{ "name": "Philippe Poutou", "value": 1.73},
-			{ "name": "Jacques Cheminade", "value": 0.16 },
-			{ "name": "François Asselineau", "value":   1.21 },
-			{ "name": "Nicolas Dupont-Aignan", "value":0.87 },
-			{ "name": "Jean Lassalle", "value": 0.51}
+			{ "name": "Nathalie Arthaud", "value": 0.3418054338299737 },
+			{ "name": "Fran\u00e7ois Asselineau", "value": 1.6476774758983348 },
+			{ "name": "Jacques Cheminade", "value": 0.14022787028921999 },
+			{ "name": "Nicolas Dupont-Aignan", "value": 1.1831726555652935 },
+			{ "name": "Fran\u00e7ois Fillon", "value": 4.233128834355829 },
+			{ "name": "Beno\u00eet Hamon", "value": 20.341805433829975 },
+			{ "name": "Jean Lassalle", "value": 0.6222611744084137 },
+			{ "name": "Marine Le Pen", "value": 1.5162138475021911 },
+			{ "name": "Emmanuel Macron", "value": 22.857142857142858 },
+			{ "name": "Jean-Luc M\u00e9lenchon", "value": 44.82033304119194 },
+			{ "name": "Philippe Poutou", "value": 2.296231375985977 }
 		],
-		"unit": "PERCENT"
+		"description": "M\u00e9thode de vote o\u00f9 les participants doivent indiquer doivent attribuer une note \u00e0 chaque candidat, note allant 0 \u00e0 3."
 	},
 	{
-		"methodId": "ev-continuous",
-		"methodName": "Evaluation continue",
-		"description":
-				"Méthode de vote où les participants doivent indiquer doivent attribuer une note à chaque candidat, note allant 0 à 100.",
+		"methodId": "evaluation-1012",
+		"methodName": "Evaluation -1/0/1/2",
+		"unit": "PERCENT",
 		"results": [
-			{ "name": "Emmanuel Macron", "value":19.60},
-			{ "name": "Marine Le Pen", "value":    1.37},
-			{ "name": "François Fillon", "value": 3.87 },
-			{ "name": "Jean-Luc Mélenchon", "value": 38.19},
-			{ "name": "Benoît Hamon", "value":  16.98 },
-			{ "name": "Nathalie Arthaud", "value": 0.28},
-			{ "name": "Philippe Poutou", "value": 1.88},
-			{ "name": "Jacques Cheminade", "value": 0.14 },
-			{ "name": "François Asselineau", "value":   1.30 },
-			{ "name": "Nicolas Dupont-Aignan", "value":0.97 },
-			{ "name": "Jean Lassalle", "value": 0.52}
+			{ "name": "Nathalie Arthaud", "value": 0.30543677458766033 },
+			{ "name": "Fran\u00e7ois Asselineau", "value": 1.5533641679029584 },
+			{ "name": "Jacques Cheminade", "value": 0.19198882974081508 },
+			{ "name": "Nicolas Dupont-Aignan", "value": 1.3002879832446113 },
+			{ "name": "Fran\u00e7ois Fillon", "value": 4.642638973732438 },
+			{ "name": "Beno\u00eet Hamon", "value": 19.923204468103673 },
+			{ "name": "Jean Lassalle", "value": 0.6108735491753207 },
+			{ "name": "Marine Le Pen", "value": 1.3875556331268 },
+			{ "name": "Emmanuel Macron", "value": 22.855397504145213 },
+			{ "name": "Jean-Luc M\u00e9lenchon", "value": 44.977746749280044 },
+			{ "name": "Philippe Poutou", "value": 2.2515053669604677 }
 		],
-		"unit": "PERCENT"
+		"description": "M\u00e9thode de vote o\u00f9 les participants doivent indiquer doivent attribuer une note \u00e0 chaque candidat, note allant -1 \u00e0 2."
 	},
-		{
+	{
+		"methodId": "evaluation-101",
+		"methodName": "Evaluation -1/0/1",
+		"unit": "PERCENT",
+		"results": [
+			{ "name": "Nathalie Arthaud", "value": 0.3287135749822317 },
+			{ "name": "Fran\u00e7ois Asselineau", "value": 1.4214641080312722 },
+			{ "name": "Jacques Cheminade", "value": 0.19545131485429992 },
+			{ "name": "Nicolas Dupont-Aignan", "value": 1.0216773276474769 },
+			{ "name": "Fran\u00e7ois Fillon", "value": 4.664179104477612 },
+			{ "name": "Beno\u00eet Hamon", "value": 19.891613361762616 },
+			{ "name": "Jean Lassalle", "value": 0.6041222459132907 },
+			{ "name": "Marine Le Pen", "value": 1.7590618336886994 },
+			{ "name": "Emmanuel Macron", "value": 23.054371002132196 },
+			{ "name": "Jean-Luc M\u00e9lenchon", "value": 45.05152807391613 },
+			{ "name": "Philippe Poutou", "value": 2.007818052594172 }
+		],
+		"description": "M\u00e9thode de vote o\u00f9 les participants doivent indiquer doivent attribuer une note \u00e0 chaque candidat, note allant -1 \u00e0 1."
+	},
+	{
+		"methodId": "borda4",
+		"methodName": "Borda 4",
+		"unit": "PERCENT",
+		"results": [
+			{ "name": "Nathalie Arthaud", "value": 0.351288056206089 },
+			{ "name": "Fran\u00e7ois Asselineau", "value": 1.3945071322120501 },
+			{ "name": "Jacques Cheminade", "value": 0.13838620395997445 },
+			{ "name": "Nicolas Dupont-Aignan", "value": 1.09644453906749 },
+			{ "name": "Fran\u00e7ois Fillon", "value": 4.481583989780711 },
+			{ "name": "Beno\u00eet Hamon", "value": 20.044709388971683 },
+			{ "name": "Jean Lassalle", "value": 0.5641899084522035 },
+			{ "name": "Marine Le Pen", "value": 1.5009580583351074 },
+			{ "name": "Emmanuel Macron", "value": 22.87630402384501 },
+			{ "name": "Jean-Luc M\u00e9lenchon", "value": 45.31615925058548 },
+			{ "name": "Philippe Poutou", "value": 2.235469448584203 }
+		],
+		"description": "M\u00e9thode de vote o\u00f9 les participants doivent classer exactement 4 candidats."
+	},
+	{
+		"methodId": "stv4-11",
+		"methodName": "STV 4-11",
+		"unit": "PERCENT",
+		"results": [
+			{ "name": "Nathalie Arthaud", "value": 0.3883698960848116 },
+			{ "name": "Fran\u00e7ois Asselineau", "value": 1.5114936496273748 },
+			{ "name": "Jacques Cheminade", "value": 0.20992967355935763 },
+			{ "name": "Nicolas Dupont-Aignan", "value": 1.1021307861866274 },
+			{ "name": "Fran\u00e7ois Fillon", "value": 4.670935236695707 },
+			{ "name": "Beno\u00eet Hamon", "value": 19.691403379867744 },
+			{ "name": "Jean Lassalle", "value": 0.5982995696441692 },
+			{ "name": "Marine Le Pen", "value": 1.668940904796893 },
+			{ "name": "Emmanuel Macron", "value": 23.470137503936183 },
+			{ "name": "Jean-Luc M\u00e9lenchon", "value": 44.62055211504146 },
+			{ "name": "Philippe Poutou", "value": 2.0678072845596724 }
+		],
+		"description": "M\u00e9thode de vote o\u00f9 les participants doivent classer au moins 4 candidats."
+	},
+	{
+		"methodId": "stv1-11",
+		"methodName": "STV 1-11",
+		"unit": "PERCENT",
+		"results": [
+			{ "name": "Nathalie Arthaud", "value": 0.25728987993138935 },
+			{ "name": "Fran\u00e7ois Asselineau", "value": 1.650943396226415 },
+			{ "name": "Jacques Cheminade", "value": 0.17152658662092624 },
+			{ "name": "Nicolas Dupont-Aignan", "value": 1.2114065180102915 },
+			{ "name": "Fran\u00e7ois Fillon", "value": 4.52401372212693 },
+			{ "name": "Beno\u00eet Hamon", "value": 20.06861063464837 },
+			{ "name": "Jean Lassalle", "value": 0.6861063464837049 },
+			{ "name": "Marine Le Pen", "value": 1.6187821612349915 },
+			{ "name": "Emmanuel Macron", "value": 22.598627787307034 },
+			{ "name": "Jean-Luc M\u00e9lenchon", "value": 44.88636363636363 },
+			{ "name": "Philippe Poutou", "value": 2.326329331046312 }
+		],
+		"description": "M\u00e9thode de vote o\u00f9 les participants doivent classer autant de candidats qu\u2019ils le souhaitent."
+	},
+	{
+		"methodId": "evaluationcontinuous",
+		"methodName": "Evaluation Continuous",
+		"unit": "PERCENT",
+		"results": [
+			{ "name": "Nathalie Arthaud", "value": 0.3282623274857929 },
+			{ "name": "Fran\u00e7ois Asselineau", "value": 1.5248314567081995 },
+			{ "name": "Jacques Cheminade", "value": 0.16942571741202217 },
+			{ "name": "Nicolas Dupont-Aignan", "value": 1.136564187638982 },
+			{ "name": "Fran\u00e7ois Fillon", "value": 4.546256750555928 },
+			{ "name": "Beno\u00eet Hamon", "value": 19.946348522819527 },
+			{ "name": "Jean Lassalle", "value": 0.6176979280646642 },
+			{ "name": "Marine Le Pen", "value": 1.6095443154142106 },
+			{ "name": "Emmanuel Macron", "value": 23.031308460696764 },
+			{ "name": "Jean-Luc M\u00e9lenchon", "value": 44.87310719706329 },
+			{ "name": "Philippe Poutou", "value": 2.216653136140623 }
+		],
+		"description": "M\u00e9thode de vote o\u00f9 les participants doivent indiquer doivent attribuer une note \u00e0 chaque candidat, note allant de 0 \u00e0 100. Les participants choisissent quels candidats ils d\u00e9cident d\u2019\u00e9valuer."
+	},
+	{
 		"methodId": "condorcet",
 		"methodName": "Condorcet",
-		"description":
-		"Des paires aléatoires de candidats sont présentées aux participants. Pour chaque paire, ils doivent choisir qui, selon eux, était le meilleur candidat des deux.",
+		"unit": "PERCENT",
 		"results": [
-			{ "name": "Emmanuel Macron", "value":19.63},
-			{ "name": "Marine Le Pen", "value":    1.37},
-			{ "name": "François Fillon", "value": 3.87 },
-			{ "name": "Jean-Luc Mélenchon", "value": 38.23},
-			{ "name": "Benoît Hamon", "value":  16.97 },
-			{ "name": "Nathalie Arthaud", "value": 0.28},
-			{ "name": "Philippe Poutou", "value": 1.88},
-			{ "name": "Jacques Cheminade", "value": 0.14 },
-			{ "name": "François Asselineau", "value":   1.30 },
-			{ "name": "Nicolas Dupont-Aignan", "value":0.97 },
-			{ "name": "Jean Lassalle", "value": 0.53}
+			{ "name": "Nathalie Arthaud", "value": 0.335049728433378 },
+			{ "name": "Fran\u00e7ois Asselineau", "value": 1.5306482330535374 },
+			{ "name": "Jacques Cheminade", "value": 0.16928828384002256 },
+			{ "name": "Nicolas Dupont-Aignan", "value": 1.135642237426818 },
+			{ "name": "Fran\u00e7ois Fillon", "value": 4.553149467447274 },
+			{ "name": "Beno\u00eet Hamon", "value": 19.91958806517599 },
+			{ "name": "Jean Lassalle", "value": 0.6207237074134161 },
+			{ "name": "Marine Le Pen", "value": 1.6047118572335473 },
+			{ "name": "Emmanuel Macron", "value": 23.040840798476406 },
+			{ "name": "Jean-Luc M\u00e9lenchon", "value": 44.87902941383932 },
+			{ "name": "Philippe Poutou", "value": 2.2113282076602947 }
 		],
-		"unit": "PERCENT"
+		"description": "Des paires al\u00e9atoires de candidats sont pr\u00e9sent\u00e9es aux participants. Pour chaque paire, ils doivent choisir qui, selon eux, \u00e9tait le meilleur candidat des deux."
 	}
 ]

@@ -14,11 +14,26 @@
 	<h2>Introduction</h2>
 
 	<p>
-		Le jeu de données sélectionné pour ce challenge est issu d’une expérimentation en ligne sur les votes des élections présidentielles de 2017 en France. Notre objectif pour ce projet est d'étudier l'effet qu'a le choix du scrutin sur le candidat ou la condidate élue. Le but de notre projet est de rendre le plus clair possible les biais qu'induisent chaque méthode par rapport au simple classement des voix. Pour cela, nous allons essayer d'expliquer par des visuels les plus auto-explicatifs possible comment se répartissent les partis politiques à travers les différents scrutins. Un autre objectif, secondaire et implicite, est de laisser au public deviner la meilleure stratégie à adopter en fonction des scrutins en observant nos résultats. Ce côté "ludique" de nos données est en partie ce qui nous a poussés à choisir ce thème.
+		Le jeu de données sélectionné pour ce challenge est issu d’une
+		expérimentation en ligne sur les votes des élections présidentielles de 2017
+		en France. Notre objectif pour ce projet est d'étudier l'effet qu'a le choix
+		du scrutin sur le candidat ou la condidate élue. Le but de notre projet est
+		de rendre le plus clair possible les biais qu'induisent chaque méthode par
+		rapport au simple classement des voix. Pour cela, nous allons essayer
+		d'expliquer par des visuels les plus auto-explicatifs possible comment se
+		répartissent les partis politiques à travers les différents scrutins. Un
+		autre objectif, secondaire et implicite, est de laisser au public deviner la
+		meilleure stratégie à adopter en fonction des scrutins en observant nos
+		résultats. Ce côté "ludique" de nos données est en partie ce qui nous a
+		poussés à choisir ce thème.
 	</p>
 
 	<p>
-		Notre site comporte également une partie interactive. Pour clarifier encore davantage la comparaison entre méthodes, l'utilisateur pourra choisir lui-même les modes de scrutin à afficher, il pourra ainsi isoler lui-même les biais qu'il trouve intéressant parmi ceux que nous proposons et se faire sa propre idée de la pertinence de chaque mode.
+		Notre site comporte également une partie interactive. Pour clarifier encore
+		davantage la comparaison entre méthodes, l'utilisateur pourra choisir
+		lui-même les modes de scrutin à afficher, il pourra ainsi isoler lui-même
+		les biais qu'il trouve intéressant parmi ceux que nous proposons et se faire
+		sa propre idée de la pertinence de chaque mode.
 	</p>
 
 	<!-- Écrire les différentes méthodes de vote? -->
@@ -36,19 +51,24 @@
 		présidentielles.
 	</p>
 	<p>
-		Bien que l'enquête recense aussi des indicateurs socio-professionnels
-		(sexe, tranche d’âge, niveau d’éducation, etc), nous avons décidé de nous concentrer
-		uniquement sur les données exprimées dans les bulletins de vote sans considérer
-		ces autres facteurs. En effet, ces facteurs d'identité ne rentrent pas en compte pour visualiser de données permettant de comparer et de mettre en opposition les différentes méthodes de vote et leur influence sur le classement final des candidats.
+		Bien que l'enquête recense aussi des indicateurs socio-professionnels (sexe,
+		tranche d’âge, niveau d’éducation, etc), nous avons décidé de nous
+		concentrer uniquement sur les données exprimées dans les bulletins de vote
+		sans considérer ces autres facteurs. En effet, ces facteurs d'identité ne
+		rentrent pas en compte pour visualiser de données permettant de comparer et
+		de mettre en opposition les différentes méthodes de vote et leur influence
+		sur le classement final des candidats.
 	</p>
 	<p>
 		En effet, nous avons pour objectif de réaliser des visualisations de données
 		permettant de comparer et de mettre en opposition les différentes méthodes
 		de vote et leur influence sur le classement final des candidats. Afin de
 		pouvoir réaliser cela, nous devons dans un premier temps traiter les données
-		afin de les homogénéiser pour pouvoir les rendre exploitables. Nous avons également supprimé les données non-utilisées pour alléger la taille du fichier. À cet effet,
-		après pré-traitement de nos données, nous ne retenons que les scores finaux
-		qu'ont obtenu les candidats selons les méthodes de vote.
+		afin de les homogénéiser pour pouvoir les rendre exploitables. Nous avons
+		également supprimé les données non-utilisées pour alléger la taille du
+		fichier. À cet effet, après pré-traitement de nos données, nous ne retenons
+		que les scores finaux qu'ont obtenu les candidats selons les méthodes de
+		vote.
 	</p>
 
 	<h2>Architecture de l'application</h2>
@@ -125,10 +145,6 @@
 		éléments utilisés de la bibliothèque D3 composent une bonne partie de la
 		taille du script généré.
 	</p>
-
-	<h2>Architecture de l'application</h2>
-	<h3>Technologies utilisées</h3>
-	<h2>Conclusion</h2>
 </main>
 
 <style>

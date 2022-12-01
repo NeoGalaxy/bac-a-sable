@@ -9,12 +9,12 @@ export const candidates: Candidate[] = [
 	{ name: "François Fillon", color: "#0066cc", correction: 4.33 },
 	{ name: "Jean-Luc Mélenchon", color: "#cc2443", correction: 0.44 },
 	{ name: "Benoît Hamon", color: "#FF8080", correction: 0.32 },
-	{ name: "Nathalie Arthaud", color: "#bb0000", correction: 1.79 },
-	{ name: "Philippe Poutou", color: "#dd0000", correction: 0.49 },
-	{ name: "Jacques Cheminade", color: "#26c4ec", correction: 1.09 },
-	{ name: "François Asselineau", color: "#118088", correction: 0.64 },
 	{ name: "Nicolas Dupont-Aignan", color: "#0082C4", correction: 4.1 },
 	{ name: "Jean Lassalle", color: "#a5c1df", correction: 1.98 },
+	{ name: "Philippe Poutou", color: "#dd0000", correction: 0.49 },
+	{ name: "François Asselineau", color: "#118088", correction: 0.64 },
+	{ name: "Nathalie Arthaud", color: "#bb0000", correction: 1.79 },
+	{ name: "Jacques Cheminade", color: "#26c4ec", correction: 1.09 },
 ]
 
 export const dataByCandidate: DataByCandidate[] = candidates.map(
