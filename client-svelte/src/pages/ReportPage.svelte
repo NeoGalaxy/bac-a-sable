@@ -15,10 +15,10 @@
 
 	<p>
 		Le but de ce Challenge Open Data est de produire un visuel sur différentes
-		méthodes de votes grâce à une expérience réalisée en ligne, offrant ainsi
-		l'occasion de comprendre les opinions des participants sur les candidats à
-		la présidentielle de 2017 et de faire un lien avec les résultats du vote
-		officiel.
+		méthodes de votes grâce à l’expérience «&nbsp;Voter Autrement&nbsp;»
+		réalisée en ligne, offrant ainsi l'occasion de comprendre les opinions des
+		participants sur les candidats à la présidentielle de 2017 et de faire un
+		lien avec les résultats du vote officiel.
 	</p>
 
 	<h2>Jeu de données et représentation sur l'application</h2>
@@ -59,12 +59,13 @@
 		La partie de pré-traitement des données consiste en un script qui récupère
 		pour chaque scrutin les résultats finaux des candidats et les rassemble en
 		un jeu de données au format bien défini. Ces données sont ensuite insérées
-		dans l’application dans une variable JavaScript directement, pour diminuer
-		les temps de traitements éventuels qui pourraient être liés à la
-		récupération depuis un fichier ou un serveur.
+		dans l’application dans un fichier JSON, qui est importé depuis
+		l’application. Cependant, lors de la compilation, Svelte inclut ce fichier
+		sous forme de variable JavaScript, ce qui permet de ne pas avoir de souci
+		d’import de fichier de type CORS.
 	</p>
 	<p>
-		L’application web utilise cette variable pour afficher le
+		L’application web utilise ces données pour afficher le
 		«&nbsp;Bi-graphe&nbsp;» car celui-ci nécessite de connaître les résultats
 		par méthode de vote. Par contre, le «&nbsp;Multi-graphe&nbsp;» a besoin
 		d’avoir les données mises en forme par candidat (puisqu’il affiche les
@@ -76,6 +77,10 @@
 	<h3>Technologies utilisées</h3>
 
 	<ul>
+		<li>
+			<strong>Script de pré-traitement&nbsp;:</strong> Python.
+			<br />
+		</li>
 		<li>
 			<strong>Application web&nbsp;:</strong>
 			<a target="_BLANK" href="https://svelte.dev">Svelte</a>.
@@ -102,10 +107,11 @@
 		<strong>A</strong> par l’analyse de GreenIT, avec un EcoIndex autour de
 		<strong>95</strong>, une émission autour de
 		<strong>1,1 gCO2e</strong> pour une taille totale d’environ
-		<strong>150 Ko</strong>. L’analyse des bonnes pratiques révèle uniquement
-		des aspects sur lesquels nous n’avons pas de contrôle dû au choix de ne pas
-		utiliser de serveur (headers de caching et compression des ressources) ou à
-		l’utilisation du service Google Fonts pour la police de l’application.
+		<strong>150 Ko</strong> (résultats fluctuants légèrement selon le navigateur
+		utilisé). L’analyse des bonnes pratiques révèle uniquement des aspects sur lesquels
+		nous n’avons pas de contrôle dû au choix de ne pas utiliser de serveur (headers
+		de caching et compression des ressources) ou à l’utilisation du service Google
+		Fonts pour la police de l’application.
 	</p>
 	<p>
 		Ce score est dû à l’efficacité de Svelte, mais la taille de la page peut
@@ -116,8 +122,6 @@
 		éléments utilisés de la bibliothèque D3 composent une bonne partie de la
 		taille du script généré.
 	</p>
-
-	<h2>Conclusion</h2>
 </main>
 
 <style>

@@ -2,12 +2,7 @@
 	import MultiGraph from "../lib/components/MultiGraph.svelte"
 	import BiGraph from "../lib/components/BiGraph.svelte"
 	import Sidebar from "../lib/components/Sidebar.svelte"
-	import {
-		candidates,
-		correction,
-		dataByCandidate,
-		rankings,
-	} from "../lib/data"
+	import { candidates, dataByCandidate, dataByMethod } from "../lib/data"
 	import { filters } from "../lib/stores"
 
 	$: correctedDataByCandidate = $filters.biasCorrection
@@ -18,7 +13,7 @@
 					data: data.map(({ methodId, value }) => {
 						return {
 							methodId,
-							value: value * correction.find((c) => c.name === name).value,
+							value: value * candidates.find((c) => c.name === name).correction,
 						}
 					}),
 				}
@@ -26,21 +21,24 @@
 		: dataByCandidate
 
 	$: correctedDataByMethod = $filters.biasCorrection
-		? rankings.map(({ methodId, methodName, description, results, unit }) => {
-				return {
-					methodId,
-					methodName,
-					description,
-					unit,
-					results: results.map(({ name, value }) => {
-						return {
-							name,
-							value: value * correction.find((c) => c.name === name).value,
-						}
-					}),
+		? dataByMethod.map(
+				({ methodId, methodName, description, results, unit }) => {
+					return {
+						methodId,
+						methodName,
+						description,
+						unit,
+						results: results.map(({ name, value }) => {
+							return {
+								name,
+								value:
+									value * candidates.find((c) => c.name === name).correction,
+							}
+						}),
+					}
 				}
-		  })
-		: rankings
+		  )
+		: dataByMethod
 </script>
 
 <main>
