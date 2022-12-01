@@ -3,15 +3,15 @@ import json
 import sys
 
 descriptions = {
-    "Approval": "Méthode de vote où les participants doivent indiquer s'ils étaient favorable ou non au candidat, pour chaque candidat.",
-    "Evaluation 0/1/2": "Méthode de vote où les participants doivent indiquer doivent attribuer une note à chaque candidat, note allant 0 à 2.",
-    "Evaluation 0/1/2/3": "Méthode de vote où les participants doivent indiquer doivent attribuer une note à chaque candidat, note allant 0 à 3.",
-    "Evaluation -1/0/1/2": "Méthode de vote où les participants doivent indiquer doivent attribuer une note à chaque candidat, note allant -1 à 2.",
-    "Evaluation -1/0/1": "Méthode de vote où les participants doivent indiquer doivent attribuer une note à chaque candidat, note allant -1 à 1.",
+    "Approval": "Méthode de vote où les participants doivent indiquer s'ils sont favorables ou non au candidat, pour chaque candidat.",
+    "Evaluation 0/1/2": "Méthode de vote où les participants doivent attribuer une note à chaque candidat, note allant de 0 à 2.",
+    "Evaluation 0/1/2/3": "Méthode de vote où les participants doivent attribuer une note à chaque candidat, note allant de 0 à 3.",
+    "Evaluation -1/0/1/2": "Méthode de vote où les participants doivent attribuer une note à chaque candidat, note allant de -1 à 2.",
+    "Evaluation -1/0/1": "Méthode de vote où les participants doivent attribuer une note à chaque candidat, note allant de -1 à 1.",
     "Borda 4": "Méthode de vote où les participants doivent classer exactement 4 candidats.",
     "STV 4-11": "Méthode de vote où les participants doivent classer au moins 4 candidats.",
     "STV 1-11": "Méthode de vote où les participants doivent classer autant de candidats qu’ils le souhaitent.",
-    "Evaluation Continuous": "Méthode de vote où les participants doivent indiquer doivent attribuer une note à chaque candidat, note allant de 0 à 100. Les participants choisissent quels candidats ils décident d’évaluer.",
+    "Evaluation Continuous": "Méthode de vote où les participants doivent attribuer une note à chaque candidat, note allant de 0 à 100. Les participants choisissent quels candidats ils décident d’évaluer.",
     "Condorcet": "Des paires aléatoires de candidats sont présentées aux participants. Pour chaque paire, ils doivent choisir qui, selon eux, était le meilleur candidat des deux.",
 }
 
