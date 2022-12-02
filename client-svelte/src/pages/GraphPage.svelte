@@ -11,9 +11,12 @@
 					name,
 					color,
 					data: data.map(({ methodId, value }) => {
+						const correction = candidates.find(
+							(c) => c.name === name
+						).correction
 						return {
 							methodId,
-							value: value * candidates.find((c) => c.name === name).correction,
+							value: value >= 0 ? value * correction : value / correction,
 						}
 					}),
 				}
@@ -29,10 +32,12 @@
 						description,
 						unit,
 						results: results.map(({ name, value }) => {
+							const correction = candidates.find(
+								(c) => c.name === name
+							).correction
 							return {
 								name,
-								value:
-									value * candidates.find((c) => c.name === name).correction,
+								value: value >= 0 ? value * correction : value / correction,
 							}
 						}),
 					}
