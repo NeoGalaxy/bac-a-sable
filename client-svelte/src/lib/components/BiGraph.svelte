@@ -18,12 +18,18 @@
 	let domainPadding = 2
 	$: x = d3
 		.scaleLinear()
-		.domain([0, d3.max(dataX.results, (d) => d.value) + domainPadding])
+		.domain([
+			Math.min(0, d3.min(dataX.results, (d) => d.value) - domainPadding),
+			d3.max(dataX.results, (d) => d.value) + domainPadding,
+		])
 		.range([padding.left, width - padding.right])
 		.interpolate(d3.interpolateRound)
 	$: y = d3
 		.scaleLinear()
-		.domain([0, d3.max(dataY.results, (d) => d.value) + domainPadding])
+		.domain([
+			Math.min(0, d3.min(dataY.results, (d) => d.value) - domainPadding),
+			d3.max(dataY.results, (d) => d.value) + domainPadding,
+		])
 		.range([height - padding.bottom, padding.top])
 		.interpolate(d3.interpolateRound)
 
@@ -130,6 +136,14 @@
 							x2={xPos}
 							y2={height - 18}
 							stroke-width={2}
+						/>
+						<rect
+							fill="white"
+							stroke-width={0}
+							x={xPos - 26}
+							y={height - 16}
+							width={52}
+							height={16}
 						/>
 						<text
 							x={xPos}
