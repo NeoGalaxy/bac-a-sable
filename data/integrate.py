@@ -3,6 +3,7 @@ import json
 import simul_stv
 import simul_broda
 import simul_ev
+import simul_condorcet
 
 SIMULATIONS_DATA = [
 	(simul_stv.gen_results, [
@@ -41,6 +42,12 @@ SIMULATIONS_DATA = [
 		{
 			"file": "evcontinuous.csv", "id": "evcontinuous", "name": "Evaluation continue",
 			"description": "Méthode de vote où les participants doivent attribuer une note à chaque candidat, note allant de 0 à 100. Le décompte consiste à faire, pour chaque candidat, la somme des notes et de la comparer avec la note maximale possible avec le même nombre de votants. Lorsque quelqu'un ne vote pas pour un candidat, il n'est pas décompté parmis les votants lors du calcul du score de ce candidat."
+		},
+	]),
+	(simul_condorcet.gen_results, [
+		{
+			"file": "condorcet.csv", "id": "condorcet", "name": "Condorcet",
+			"description": "Système de scrutin dans lequel chaque électeur est présenté avec 8 duels et doit choisir pour chaque duel quel est son candidat préféré. Le décompte se fait ensuite en comptant pour chaque candidat combien de duels ils gagnent sur l'ensemble des duels qu'ils ont eu. Ce système de scrutin se base sur le principe qu'habituellement, un cadidat gagne la majorité ou tous les duels (donnant 100%). Un ex-equaux donne un demi point à chaque candidat."
 		},
 	]),
 ]

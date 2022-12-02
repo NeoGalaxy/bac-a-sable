@@ -5,48 +5,48 @@
 		"description": "Dans ce syst\u00e8me de scrutin, chaque \u00e9lecteur donne un rang \u00e0 chaque candidat. Les votes correspondants au premier rang est attribu\u00e9 \u00e0 chaque candidat. Ensuite, le candidat avec le moins de vote est disqualifi\u00e9, et chacun de ses votes est transf\u00e9r\u00e9 au candidat non disqualifi\u00e9 ayant le rang le plus \u00e9lev\u00e9 d'apr\u00e8s le vote. Les votants ne sont les m\u00eames que dans STV 4-11.",
 		"results": [
 			{
-				"name": "Jacques Cheminade",
-				"value": 0.3836667580158948
-			},
-			{
-				"name": "Jean Lassalle",
-				"value": 1.0779208915684662
+				"name": "Emmanuel Macron",
+				"value": 24.015712067233032
 			},
 			{
 				"name": "Philippe Poutou",
 				"value": 6.27569197040285
 			},
 			{
-				"name": "Nathalie Arthaud",
-				"value": 0.6942541335525715
+				"name": "Jean Lassalle",
+				"value": 1.0779208915684662
+			},
+			{
+				"name": "Fran\u00e7ois Asselineau",
+				"value": 2.5577783867726316
 			},
 			{
 				"name": "Beno\u00eet Hamon",
 				"value": 42.5139307572851
 			},
 			{
-				"name": "Nicolas Dupont-Aignan",
-				"value": 1.5986114917328949
-			},
-			{
-				"name": "Emmanuel Macron",
-				"value": 24.015712067233032
-			},
-			{
-				"name": "Marine Le Pen",
-				"value": 1.9457385585091806
-			},
-			{
 				"name": "Fran\u00e7ois Fillon",
 				"value": 5.755001370238421
+			},
+			{
+				"name": "Nathalie Arthaud",
+				"value": 0.6942541335525715
 			},
 			{
 				"name": "Jean-Luc M\u00e9lenchon",
 				"value": 51.548369416278426
 			},
 			{
-				"name": "Fran\u00e7ois Asselineau",
-				"value": 2.5577783867726316
+				"name": "Nicolas Dupont-Aignan",
+				"value": 1.5986114917328949
+			},
+			{
+				"name": "Jacques Cheminade",
+				"value": 0.3836667580158948
+			},
+			{
+				"name": "Marine Le Pen",
+				"value": 1.9457385585091806
 			}
 		],
 		"unit": "percent"
@@ -57,36 +57,16 @@
 		"description": "Dans ce syst\u00e8me de scrutin, chaque \u00e9lecteur donne un rang \u00e0 chaque candidat. Les votes correspondants au premier rang est attribu\u00e9 \u00e0 chaque candidat. Ensuite, le candidat avec le moins de vote est disqualifi\u00e9, et chacun de ses votes est transf\u00e9r\u00e9 au candidat non disqualifi\u00e9 ayant le rang le plus \u00e9lev\u00e9 d'apr\u00e8s le vote. Les votants ne sont les m\u00eames que dans STV 1-11.",
 		"results": [
 			{
-				"name": "Jacques Cheminade",
-				"value": 0.4278456190391301
-			},
-			{
-				"name": "Jean Lassalle",
-				"value": 1.212229253944202
+				"name": "Emmanuel Macron",
+				"value": 25.055709064979055
 			},
 			{
 				"name": "Philippe Poutou",
 				"value": 5.93635796416793
 			},
 			{
-				"name": "Beno\u00eet Hamon",
-				"value": 43.69373384437116
-			},
-			{
-				"name": "Nicolas Dupont-Aignan",
-				"value": 1.6311614225866835
-			},
-			{
-				"name": "Emmanuel Macron",
-				"value": 25.055709064979055
-			},
-			{
-				"name": "Marine Le Pen",
-				"value": 2.290756751938676
-			},
-			{
-				"name": "Jean-Luc M\u00e9lenchon",
-				"value": 51.88519475889116
+				"name": "Jean Lassalle",
+				"value": 1.212229253944202
 			},
 			{
 				"name": "Fran\u00e7ois Asselineau",
@@ -97,8 +77,28 @@
 				"value": 6.1413673232908454
 			},
 			{
+				"name": "Beno\u00eet Hamon",
+				"value": 43.69373384437116
+			},
+			{
 				"name": "Nathalie Arthaud",
 				"value": 0.721989482128532
+			},
+			{
+				"name": "Jean-Luc M\u00e9lenchon",
+				"value": 51.88519475889116
+			},
+			{
+				"name": "Nicolas Dupont-Aignan",
+				"value": 1.6311614225866835
+			},
+			{
+				"name": "Jacques Cheminade",
+				"value": 0.4278456190391301
+			},
+			{
+				"name": "Marine Le Pen",
+				"value": 2.290756751938676
 			}
 		],
 		"unit": "percent"
@@ -411,6 +411,58 @@
 			{
 				"name": "Philippe Poutou",
 				"value": 53.42627394951827
+			}
+		],
+		"unit": "percent"
+	},
+	{
+		"methodId": "condorcet",
+		"methodName": "Condorcet",
+		"description": "Syst\u00e8me de scrutin dans lequel chaque \u00e9lecteur est pr\u00e9sent\u00e9 avec 8 duels et doit choisir pour chaque duel quel est son candidat pr\u00e9f\u00e9r\u00e9. Le d\u00e9compte se fait ensuite en comptant pour chaque candidat combien de duels ils gagnent sur l'ensemble des duels qu'ils ont eu. Ce syst\u00e8me de scrutin se base sur le principe qu'habituellement, un cadidat gagne la majorit\u00e9 ou tous les duels (donnant 100%). Un ex-equaux donne un demi point \u00e0 chaque candidat.",
+		"results": [
+			{
+				"name": "Emmanuel Macron",
+				"value": 80.0
+			},
+			{
+				"name": "Philippe Poutou",
+				"value": 70.0
+			},
+			{
+				"name": "Jean Lassalle",
+				"value": 50.0
+			},
+			{
+				"name": "Fran\u00e7ois Asselineau",
+				"value": 10.0
+			},
+			{
+				"name": "Fran\u00e7ois Fillon",
+				"value": 20.0
+			},
+			{
+				"name": "Beno\u00eet Hamon",
+				"value": 90.0
+			},
+			{
+				"name": "Nathalie Arthaud",
+				"value": 60.0
+			},
+			{
+				"name": "Jean-Luc M\u00e9lenchon",
+				"value": 100.0
+			},
+			{
+				"name": "Nicolas Dupont-Aignan",
+				"value": 30.0
+			},
+			{
+				"name": "Jacques Cheminade",
+				"value": 40.0
+			},
+			{
+				"name": "Marine Le Pen",
+				"value": 0.0
 			}
 		],
 		"unit": "percent"
