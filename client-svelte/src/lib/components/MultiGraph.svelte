@@ -24,7 +24,15 @@
 	$: y = d3
 		.scaleLinear()
 		.domain([
-			0,
+			Math.min(
+				0,
+				d3.min(dataByCandidate, (d) =>
+					d3.min(
+						d.data.filter((_, i) => $filters.methods[i]),
+						(e) => e.value
+					)
+				)
+			),
 			d3.max(dataByCandidate, (d) =>
 				d3.max(
 					d.data.filter((_, i) => $filters.methods[i]),
@@ -73,20 +81,23 @@
 					}
 					return index
 				})()}
+				{@const yPos = data.value > 0 ? y(data.value) : y(0)}
+				{@const barHeight =
+					data.value > 0 ? y(0) - y(data.value) : y(data.value) - y(0)}
 				<rect
 					x={x(candidate.name) + localIndex * bandWidth}
-					y={isShown ? y(data.value) : height - padding.bottom}
+					y={isShown ? yPos : y(0)}
 					width={isShown ? bandWidth : 0}
-					height={isShown ? y(0) - y(data.value) - 1 : 0}
+					height={isShown ? barHeight : 0}
 					style:transition="all 0.5s ease-in-out"
 				/>
 
 				<rect
 					class="bar-zone"
 					x={x(candidate.name) + localIndex * bandWidth}
-					y={isShown ? padding.top : height - padding.bottom}
+					y={isShown ? padding.top : y(0)}
 					width={isShown ? bandWidth : 0}
-					height={isShown ? y(0) - padding.bottom : 0}
+					height={isShown ? height - padding.bottom - padding.top : 0}
 					on:mouseenter={() => {
 						$hoveredBar = { methodId: data.methodId, color: borderColor }
 					}}
@@ -100,7 +111,7 @@
 							x1={x(candidate.name) + localIndex * bandWidth + bandWidth / 2}
 							y1={28}
 							x2={x(candidate.name) + localIndex * bandWidth + bandWidth / 2}
-							y2={y(data.value) - 2}
+							y2={yPos}
 						/>
 						<text
 							x={x(candidate.name) + localIndex * bandWidth + bandWidth / 2}
