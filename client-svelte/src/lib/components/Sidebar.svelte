@@ -1,10 +1,29 @@
 <script lang="ts">
 	import Checkbox from "./Checkbox.svelte"
 	import Filter from "./Filter.svelte"
-	import { filters } from "../stores"
 	import MethodSwitch from "./MethodSwitch/MethodSwitch.svelte"
-	import { dataByMethod } from "../data"
 	import DoubleRadio from "./DoubleRadio.svelte"
+	import { filters } from "../stores"
+	import { dataByMethod } from "../data"
+	import { compareArrays } from "../functions"
+
+	$: checkAll = compareArrays(
+		$filters.methods,
+		$filters.methods.map((_) => true)
+	)
+
+	let lastState: boolean[]
+
+	function onSelectAllChange(event: Event) {
+		const target = event.target as HTMLInputElement
+
+		if (target.checked) {
+			lastState = [...$filters.methods]
+			$filters.methods = $filters.methods.map((_) => true)
+		} else {
+			$filters.methods = [...lastState]
+		}
+	}
 </script>
 
 <div class="sidebar">
@@ -46,6 +65,15 @@
 				<p>x</p>
 				<p>y</p>
 				<p>scrutin</p>
+			</div>
+		{:else}
+			<div>
+				<Checkbox
+					checked={checkAll}
+					on:change={onSelectAllChange}
+					label="Tout sélectionner"
+					name="checkAll"
+				/>
 			</div>
 		{/if}
 

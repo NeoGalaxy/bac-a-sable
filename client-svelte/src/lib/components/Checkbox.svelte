@@ -8,7 +8,7 @@
 </script>
 
 <div>
-	<input type="checkbox" bind:checked {disabled} {name} id={name} />
+	<input type="checkbox" bind:checked {disabled} {name} id={name} on:change />
 	<label
 		for={name}
 		style={$hoveredBar && $hoveredBar.methodId === name
