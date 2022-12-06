@@ -69,9 +69,11 @@
 			bind:this={horizontalAxis}
 			transform="translate(0, {height - padding.bottom})"
 		/>
-		{#each candidates as candidate, i}
-			{@const xPos = x(dataX.results[i].value)}
-			{@const yPos = y(dataY.results[i].value)}
+		{#each candidates as candidate}
+			{@const xValue = dataX.results.find(e => e.name == candidate.name).value}
+			{@const yValue = dataY.results.find(e => e.name == candidate.name).value}
+			{@const xPos = x(xValue)}
+			{@const yPos = y(yValue)}
 			{@const darkerColor = d3.color(candidate.color).darker(0.4).formatHex()}
 			<g fill={candidate.color}>
 				<circle
@@ -127,7 +129,7 @@
 							text-anchor="end"
 							fill={darkerColor}
 						>
-							{printPercentage(dataY.results[i].value)}
+							{printPercentage(yValue)}
 						</text>
 
 						<line
@@ -151,7 +153,7 @@
 							text-anchor="middle"
 							fill={darkerColor}
 						>
-							{printPercentage(dataX.results[i].value)}
+							{printPercentage(xValue)}
 						</text>
 					</g>
 				</g>
